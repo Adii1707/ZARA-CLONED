@@ -1,0 +1,78 @@
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+input{
+    border: none;
+    border-bottom: 0.2px solid black;
+    padding: 10px 0px 10px 0px;
+    width:50%;
+    height:16px;
+    outline: none;
+}
+
+.logindetails{
+    margin-top:25vh;
+}
+#email,#password{
+    padding: 24px 0px 10px 0.5px;
+}
+.forget{
+    
+    font-size: 9px;
+    font-weight: none;
+}
+.bgcolor{
+    color: white;
+    
+    padding: 8px 12px;
+}
+#login{
+    height:16px;
+    width:216px;
+    background-color: black;
+}
+.loginbtn{
+    height:30px;
+    width:216px;
+    background-color: black;
+    color:white;
+    font-size: 12px;
+    width:50%;
+    margin-top: 10vh;
+}
+.loginbtn:hover{
+    background-color: rgb(51,51,51);
+}
+.zara{
+    width:50%;
+    font-size: 12px;
+}
+.mainhead{
+    font-size: 18px;
+}
+.simple{
+    visibility: hidden;
+}
+@media all and (min-width: 320px) and (max-width: 767px) {
+    .right{
+        visibility: hidden;
+    }
+    
+    .loginbtn{
+        width:300%;
+        margin-bottom: 30px;
+        
+    }
+    input{
+        width:300%;
+        margin: none;
+        padding: 10px 0px 10px 0px;
+    }
+    .simple{
+        visibility: visible;
+    }
+    .forget{
+        font-size: 11px;
+    }
+}
