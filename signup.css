@@ -1,0 +1,83 @@
+*{
+    font-family:  Helvetica,Arial, sans-serif;
+}
+#heading{
+    font-size: 18px;
+    font-weight: bold;
+}
+.signup{
+    margin-top: 25vh;
+}
+.tics{
+    font-weight: bold;
+    font-size: 10px;
+}
+#signupdata{
+    margin-top: 5vh;
+}
+.inp{
+    border: none;
+    border-bottom: 0.5px solid rgb(51, 51, 51);
+    width:100%;
+    padding: 24px 0px;
+    font-size: 12px;
+    font-weight: 300px;
+    outline: none;
+}
+.rightbox{
+    margin-top: 23vh;
+}
+.more{
+    
+    font-size: 9px;
+    
+}
+#optional{
+    padding: none;
+    margin-top: -10px;
+    height:30px;
+}
+#state{
+    border: none;
+    border-bottom: 0.5px solid rgb(51, 51, 51);
+    outline: none;
+    width:100%;
+}
+#telephone{
+    padding: -24px;
+    padding-left: 24px;
+    border: none;
+    border-bottom: 0.5px solid rgb(51, 51, 51);
+    width:90%;
+    font-size: 12px;
+    outline: none;
+}
+.cbox{
+    font-family:  Helvetica,Arial, sans-serif;
+    font-size: 12px;
+}
+#create{
+    color:white;
+    background-color: black;
+    padding:8px 12px 8px 12px;
+    width: 100%;
+    font-size: 12px;
+}
+#test2{
+    display: none;
+}
+#smallscreens{
+    display: none;
+}
+@media all and (min-width: 320px) and (max-width: 767px) {
+    #test2{
+        display: none;
+    }
+    #test{
+        display: none;
+    }
+    #smallscreens{
+        display: block;
+    }
+    
+}

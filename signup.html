@@ -1,0 +1,146 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="container" id="test">
+        <div class="row signup">
+            <div class="col-5">
+                <span id="heading">PERSONAL DETAILS</span>
+                <form action="" name="formA" id="form1">
+                    <!-- we have to give same name -->
+                    <input type="radio"  id="pers" name="PERSONAL_one" value="PERSONAL" checked>
+                    <label class="tics" for="pers">PERSONAL</label>
+                    <input type="radio" id="company" name="PERSONAL_one" value="COMPANY">
+                    <label class="tics" for="company">COMPANY</label><br>
+                    <input type="email" class="inp" placeholder="E-MAIL" id="email" required>
+                    <input type="password" class="inp" placeholder="PASSWORD" id="password" required>
+                    
+                    <input type="text"class="inp" placeholder="NAME" id="name" required>
+                   
+                    
+                    <input type="text"class="inp" placeholder="ADDRESS" required>
+                    
+                    <input type="text"class="inp" placeholder="LOCALITY" required><br>
+                    
+                    <label for="" class="more">STATE</label><br>
+                    <select name="" id="state">
+                        <option value="">--   </option>
+                        <option value="">ANDHRAPRADESH</option>
+                        <option value="">ARUNALCHALPRADESH</option>
+                        <option value="">MADHYAPRADESH</option>
+                    </select>
+                    <label for="" class="more">PREFIX</label><br>
+                    <span>+91</span><input id="telephone" type="text" placeholder="TELPHONE" required><br><br>
+                    <input type="checkbox" id="c1" checked ><label class="cbox" for="">I WISH TO RECEIVE ZARA NEWS ON MY E-MAIL</label><br>
+                    
+                    <input type="checkbox" id="c2" checked><label class="cbox" for="">I ACCEPT THE PRIVACY STATEMENT</label><br>
+                    <input id="create" type="submit" value="CREATE ACCOUNT"></input>
+                </form>
+                
+            </div>
+            <div class="col-5 rightbox">
+                <input type="password" class="inp" placeholder="REENTER PASSWORD" required><br>
+                
+                <input type="text" class="inp"placeholder="PINCODE" required><br>
+                <label for="" class="more">MORE INFO</label>
+                <input type="text" id="optional" class="inp" placeholder="optional"><br>
+                <input type="text"class="inp" placeholder="CITY" required><br>
+                <label for="" class="more">REGION</label><br>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="test2">
+        <div class="row signup">
+            <div class="col-5">
+                <span id="heading">PERSONAL DETAILS</span>
+                <form action="" id="form2">
+                    <!-- we have to give same name to radio buttons-->
+                    <input type="radio"  id="pers2" name="PERSONAL_one" value="PERSONAL">
+                    <label class="tics" for="pers">PERSONAL</label>
+                    <input type="radio" id="company2" name="PERSONAL_one" value="COMPANY" checked>
+                    <label class="tics" for="company">COMPANY</label><br>
+                    <input type="email" class="inp" placeholder="E-MAIL" id="email2" required>
+                    <input type="password" class="inp" placeholder="PASSWORD" id="password2" required>
+                    <input type="text" class="inp" placeholder="GSTIN" id="gst2" required>
+                    <input type="text"class="inp" placeholder="NAME" required>
+                   
+                
+                    <input type="text"class="inp" placeholder="ADDRESS" required>
+                    
+                    <input type="text"class="inp" placeholder="LOCALITY" required><br>
+                    
+                    <label for="" class="more">STATE</label><br>
+                    <select name="" id="state">
+                        <option value="">--   </option>
+                        <option value="">ANDHRAPRADESH</option>
+                        <option value="">ARUNALCHALPRADESH</option>
+                        <option value="">MADHYAPRADESH</option>
+                    </select>
+                    <label for="" class="more">PREFIX</label><br>
+                    <span>+91</span><input id="telephone" type="text" placeholder="TELPHONE" required><br><br>
+                    <input type="checkbox" id="b1" checked ><label class="cbox" for="">I WISH TO RECEIVE ZARA NEWS ON MY E-MAIL</label><br>
+                    <input type="checkbox" id="b2" checked><label class="cbox" for="">I ACCEPT THE PRIVACY STATEMENT</label><br>
+                    <button id="create" type="submit">CREATE ACCOUNT</button>
+                </form>
+                
+            </div>
+            <div class="col-5 rightbox">
+                <input type="password" class="inp" placeholder="REENTER PASSWORD" required><br>
+                <input type="text" class="inp" placeholder="COMPANY NAME" required><br>
+                <input type="text" class="inp"placeholder="PINCODE" required><br>
+                <label for="" class="more">MORE INFO</label>
+                <input type="text" id="optional" class="inp" placeholder="optional"><br>
+                <input type="text"class="inp" placeholder="CITY" required><br>
+                <label for="" class="more">REGION</label><br>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="smallscreens">
+        <div class="row signup">
+            <div class="col-10">
+                <span id="heading">PERSONAL DETAILS</span>
+                <form action="" id="samllform">
+                    <!-- we have to give same name -->
+                    <input type="checkbox" id="comscreen" onchange="checkfun()" name="temp" value="comp">
+                    <label class="tics">COMPANY</label><br>
+                    <input type="email" class="inp" placeholder="E-MAIL" id="email3" required>
+                    <input type="password" class="inp" placeholder="PASSWORD" id="password3" required>
+                    <input type="password" class="inp" placeholder="REENTER PASSWORD" required><br>
+                    <div id="gst"><input type="text" class="inp" placeholder="GSTIN" ></div>
+                    <input type="text" class="inp" id="Cname" name="company" placeholder="COMPANY NAME" ><br>
+                    <input type="text"class="inp" placeholder="NAME" required>
+                    
+                    <input type="text" class="inp"placeholder="PINCODE" required><br>
+                
+                    <input type="text"class="inp" placeholder="ADDRESS" required>
+                    <input type="text" id="optional" class="inp" placeholder="optional"><br>
+                    <input type="text"class="inp" placeholder="LOCALITY" required><br>
+                    <input type="text"class="inp" placeholder="CITY" required><br>
+                    <label for="" class="more">STATE</label><br>
+                    <select name="" id="state">
+                        <option value="">--   </option>
+                        <option value="">ANDHRAPRADESH</option>
+                        <option value="">ARUNALCHALPRADESH</option>
+                        <option value="">MADHYAPRADESH</option>
+                    </select>
+                    <label for="" class="more">PREFIX</label><br>
+                    <span>+91</span><input id="telephone" type="text" placeholder="TELPHONE" required><br><br>
+                    <input type="checkbox" id="ch31" required><label class="cbox" for="">I WISH TO RECEIVE ZARA NEWS ON MY E-MAIL</label><br>
+                    <input type="checkbox" id="ch32" required><label class="cbox" for="">I ACCEPT THE PRIVACY STATEMENT</label><br>
+                    <button id="create" type="submit">CREATE ACCOUNT</button>
+                </form> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="signup.js"></script>
