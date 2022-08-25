@@ -12,6 +12,7 @@
             grid-template-rows: repeat(1, auto);
             gap: 10px;
             padding: 10px 10px 10px 10px;
+            width: 100%;
           
         }
         #container>div{
@@ -26,9 +27,50 @@
             display: flex;
             justify-content: space-between;
         }
+        .sort1{
+            display: flex;
+        }
+        #sort{
+            width: 150px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: black;
+            color: white;
+        }
+      #filter{
+        width: 150px;
+            height: 40px;
+            margin-top: 10px;
+            margin-left: 10px;
+            background-color: black;
+            color: white;
+      }
+      #sorting{
+        display: flex;
+        justify-content: space-between;
+      }
     </style>
 </head>
 <body>
+    <div id="sorting">
+        <div class="sort1">
+            <h5>Sort By:</h5>
+            <select name="" id="sort">
+                <option value="">Sort By Price</option>
+                <option value="lth">Low To High</option>
+                <option value="htl">High To Low</option>
+            </select>
+        </div>
+        <div class="sort1">
+            <h5>Filter By:</h5>
+            <select name="" id="filter">
+                <option value="">Filter By price</option>
+                <option value="">Below 3000</option>
+                <option value="">Above 3000</option>
+            </select>
+        </div>
+    </div>
     <div id="container"></div>
 </body>
 </html>
