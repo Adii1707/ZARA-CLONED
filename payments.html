@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zara Clone By - Rudra Tiwari</title>
+    <link rel="stylesheet" href="./style/Payment.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        #paymentDetailsdiv{
+            width: 98%;
+            height: 300px;
+
+            background-color:rgb(250,249,249);
+        }
+        #selectPaymentMethod{
+            width: 98%;
+            margin: auto;
+            height: 30px;
+       
+
+            font-size: 14px;
+            color: #6C757D;
+            padding-top: 8px;
+        }
+        #footer{
+            margin-top: 80%;;
+        }
+        #instantPay{
+            display: flex;
+            width: 98%;
+            height: 30px;
+            background-color: rgb(241,238,238);
+            /* border: 1px solid deeppink; */
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+        .PaymentPageimg{
+            width: 25px;
+            height: 25px;
+            margin-right: 10px;
+        }
+        #tickbutton,#tickbutton2,#tickbutton4,#tickbutton6,#tickbutton8{
+            width: 15px;
+            height: 15px;
+            /* margin-left: 150px; */
+            margin-top: 8px;
+            margin-right: 5px;
+        }
+        #tickbutton1,#tickbutton3,#tickbutton5,#tickbutton7,#tickbutton9{
+            width: 15px;
+            height: 15px;
+            /* margin-left: 150px; */
+            margin-top: 8px;
+            margin-right: 5px;
+            display: none;
+        }
+        .PaymentPagediv{
+            width: 585px;
+            padding-top: 6px;
+            font-size: 12px;
+            color: #000000DE;
+        }
+        #hiddendiv1{
+            display: none;
+            width: 98%;
+            height: 60px;
+            background-color:white;
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+        #hiddendiv1input{
+            background-color: white;
+        }
+        #MobileWallet,#Credit,#NetBankig,#CashOnDelivery{
+            display: flex;
+            width: 98%;
+            height: 30px;
+            background-color: rgb(241,238,238);
+            /* border: 1px solid deeppink; */
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+        #hiddendiv2{
+            display: none;
+            width: 98%;
+            height: 180px;
+            background-color:white;
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+        .innerofhidden2{
+            width: 250px;
+            height: 30px;
+            /* border: 1px solid red; */
+            margin-bottom: 10px;
+            margin-left: 20px;
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            background-color:white;
+        }
+        .mobileimg{
+            width: 24px;
+            height: 24px;
+            background-color:white;
+        }
+        .mobilediv{
+            font-size: 12px;
+            padding-top: 7px;
+            margin-left: 10px;
+            background-color:white;
+           
+        }
+        #hiddendiv3{
+            display: none;
+            width: 98%;
+            height: 200px;
+            background-color:white;
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+        #creditdiv1{
+            display: flex;
+            margin-left: 20px;
+            background-color:white;
+        }
+        #creditinput1{
+            width: 360px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black;
+            margin-right: 180px;
+            background-color:white;
+        }
+        #creditinput2{
+            width: 360px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black; 
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color:white;
+        }
+        #creditimg1{
+            width: 24px;
+            height: 24px;
+            background-color:white;
+        }
+        #creditdiv2{
+            display: flex;
+            margin-left: 20px;
+            margin-top: 20px;
+            background-color:white;
+        }
+        #creditinput3{
+            width: 120px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black; 
+            margin-right: 220px;
+            background-color:white;
+           
+        }
+        #creditinput4{
+            width: 120px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid black; 
+            background-color:white;
+        }
+        #creditdiv3{
+            display: flex;
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color:white;
+        }
+        #creditimg2{
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            background-color:white;
+        }
+        #credittext{
+            width: 500px;
+            font-size: 12px;
+            background-color:white;
+        }
+        #hiddendiv4{
+            display: none;
+            width: 98%;
+            height: 60px;
+            background-color:white;
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+        #mainnetbankingdiv{
+            display: flex;
+            background-color:white;
+        }
+        .netBankingdiv{
+            display: flex;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+            margin-left: 25px;
+            background-color:white;
+        }
+        .innernetbankingdiv{
+            font-size: 14px;
+            padding-top: 18px;
+            width: 45px;
+            height: 30px;
+            background-color:white;
+        }
+        #netBankingselect{
+            border: none;
+            text-decoration: underline;
+            margin-left: 25px;
+            background-color:white;
+        }
+        .netBankingimg{
+            background-color: white;
+        }
+        
+        #hiddendiv5{
+            display: none;
+            width: 98%;
+            height: 40px;
+            background-color:white;
+            padding-top: 30px;
+            padding-left: 10px;
+        }
+        #CashOnDeliverydiv{
+            margin-left: 10px;
+            font-size: 12px;
+            color: #6C757D;
+            background-color: white;
+        }
+       #paymentdivunique{
+           background-color: black;
+           color: white;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 80%;
+           height: 30px;
+           margin: auto;
+           margin-top: 40px;
+           
+       }
+    </style>
+    <style>
+        #navbar{
+            display: flex;
+            width: 100%;
+            height: 60px;
+            /* border: 1px solid red; */
+            margin-bottom: 10px;
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        }
+         #navbar>div{
+            margin-top: 22px;
+            margin-left: 20px;
+            height: 20px;
+        }
+        #navbar>div:hover{
+            background-color: aliceblue;
+        }
+  
+     </style>
+    <style>
+        #finaldivOfpaymentPage{
+            display: flex;
+            width: 98%;
+            height: 30px;
+            margin: auto;
+            margin-top: 10px;
+            background-color: white;
+            /* border: 1px solid brown; */
+        }
+        #finalimgofpayementpage{
+            width: 25px;
+            height: 25px;
+            background-color: white;
+        }
+        #finaldivOfpaymentPage1{
+            margin-left: 5px;
+            text-decoration: underline;
+            background-color: white;
+            margin-top: 5px;
+            font-size: 15px;
+        }
+        #finaldivOfpaymentPage2{
+            margin-left: 5px;
+            /* text-decoration: underline; */
+            background-color: white;
+            margin-top: 5px;
+            font-size: 15px;
+        }
+    </style>
+    <style>
+        h4{
+            margin-bottom: 30px;
+        }
+        p{
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar" style="height: 150px;background-color: white;">
+       
+        <div id="zara">
+            <span id="menu" id="humburger" style="font-size:30px;cursor:pointer;color:black;padding-top:200px;" onclick="openNav()">&#9776;</span>  
+            <div> <a href="index.html">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVoAAACRCAMAAAC114CHAAAAflBMVEX///8AAADZ2dlra2uPj4/Pz8+UlJRcXFyjo6Pt7e3f39/V1dXT09NHR0dWVlbNzc1mZmb5+fnz8/OysrKbm5vFxcXj4+N9fX2IiIg+Pj67u7t1dXWsrKy2trb09PQPDw8vLy+CgoIdHR1PT08mJiYXFxcsLCw4ODghISE8PDzWJuQoAAAP3UlEQVR4nO1daXfqug4llLYQWqBlKENpoXQ45///wXcchnjYsiUrKWvd9faXu86t7TibxNaWZKXTuRpGy+tdO4qyeL72FHR4LoprT4HAsuhfewo69Itifu05YBTF97WnoMOuKG6uPQeIcVEUZYPjPQ27aQzToHoO/Asu/t0AsSJ0H1zgKz2AVt1yMXjSUnHzb2JNbgNlwcD36jGBFdU1uGDP/N8pnMvEG/QHDfjlX/nn/fK3x5u7bTebCjzffMSpHd2tS9bTsCQGWOMbeGTNbYFGnMGW89mofhBepsG7wsC06jzO6EmApvbjbsgeBZLwD6ug5fj4B9a9d9GQd2Tz8Uvd6n1/y578CY9Vxwa3AYraF9GL9UiMEu4Km+Mf4LPnQ0jtP0w/rJZ70S0MTr0kfeLA1M5ke8KcYHYTNj395YMzrJzaTmdrt91t+fcwO/URdEkAUSveJglmi/AHutw554nKofbyXpzAFgHn5/3A7ZBESO1KvAfMgjHI2zqc/7ZnjJtHbWftdsDWCH2tnC0QIqCWtQo6eCOY/QqbPtd/ZQycSa2/qe44OmAfeyDy4FPLtwouuCGoBXK2H/2rj1xqL1vSGYwVrm78ybgACy61HxmuH0hAgRetz/rPk8yROdQGxuB36i23N+KmxK5D7S5nhB1BLbgb52JpIySf2tBmSUiBidW0KbFr323Wq7D1byIyQUezpbcXBbWdF7/fa6z1k9OUd4UkbGqzHBwEs3B+ToNQqfnQUNt5l3ScOi0b8nla1GZZHZTzAD2T3luavJ6K2lDGRGwf17vUkNitqc36rfy9+IwdauyZEkkzT0UtEN/kEuTfBfcScVyofcnqPiowoA3ntQF2rwsdtQ/MWXVCzcNTGSmcqX3P6j0mmIWW1dRvlRK7OmqR6ULsJl9eM57PM4UztWIfXIUPf+4nQPM4eENTL4qS2uCnLIoRbDgM2jUidk/UMgx4gH4wp8jtg2U5MbySWmS8hK75DjDUMtQ+QKn4mZ6CKcUoA06cxM6ppfaeObWw1R/+RWgcqc3bw8Jf+wj4aKDFI/GuaKkFKwLqjrzN+RG2Gkdqs7JG+FEbA8hTXKRoqYWWYdgMPdwcn2cKFbV5NjI/amOwR02j6lNNLVSKgc8QL2uCq1CoqM16/NdwSjBqYwDbxsWumlrk7gxCR69wZg2IXUNtnoeSYJZ4yYnwWXT7VFMLLRj/OYLZDpkmkwNDbZZf/Y5glhhs8he2jhKlphb+nj23zYKwzdXJOBW1OZbXM54QFap9KrC3ISoC1dTCjdZLmVv2saGjF7tlpgN8AudDupxfNx2cuxQLGKmpxTvUm9OmeLuFrfRit5RN9oxQGx6BlWSn8zkktouYRa2mFu8Hzq9/u6J2DbXYLfPcB4KojcGgILVb5CJ6aj/RCM5ucLM9ZfgFUIvdMsuEQzrHgAor9QwheA2JWDl6aqHp7cgBc/dY+7ASfGIoi5+MXgSz5K9UPc3Y/rqnr6KnFgktx67aVv/A76BW7JY5/gNJ1MbgYVf9B3eirRw9tfBFsaP4j9XCiz14WrFbJsQmgihqY7A5XgNbOfT19dTC7BNLAj4f3zMi/0dyJYAyI1mXitqQb9BpkjgZ5C95nZaotS7YX8buSCl2S7mRQUVtSCfP+rye+oGSIxZUv5aotRaE95MrCftDlGK3lD/2oqiNweH88+OURpKsltbamrH65vEd6cSunFoqakPagW+XSwjFbkvU1hbi8mLiblBDpdgVUyuL2hj0axsEi90HoqOeWriG1vtm/aJhsZtO8ImhlIaB8O8bW/O/6u0NSw3K/GtJMlymM7b8BPimVGK3Kzw7SR0rob0ZC+t5loldPbVQC1z+OrHOLbQgdgfC9YQ6e0du852lPT8sdnGcsiX3TL2L2T8pFrvJBJ8GQUVtIpLOeatEYrcdai+/49axFnGwISNJPhcEsxEz5daVBLj7G+zajr/28teV4/KT+zybhTBqY3Djrjh72B+L3VaiDJf4zbO7xLcjdtmgojYxK8ObHBa72Pumphbpxsv7NfM8oNBL9mulG4RRG4OtrxaxloO7oJpa8JLX3f1rtiJ2uQAZqxUiLteT184CFrs91FdN7T7sfvlbGez++Ob0kV0OvglqI4b1c7BYER5J1FlNbagY6p1rH+wPUp9ng8B7aPwwUD/0J+N8JhSgaz4xyZpNaJXgl1IndnMnekK0T5gAhsUuSmfSUhtwZUnGOTgxGBzaqdDYmV0ae4LZ2Cl36Pxh/0Baan1T0V5d74ECxKZlTi6BDFTUJhq13CMRjs/0glvVUvvH62o7lNFPicVu3ikPCQ7wuom4J3SPY7ELkkOU1Prd7blMYT4lzktrW+xShTqiqblj7A/DI4ViV0mt6/7cOVbUD/QRX0fs4rAWpf5PmOB1GMfaQ7Gso9ZdwSbe32AXeYJPAxBHbSpQpdLgUDteOza1jnD1rNM7KFEosUv4PJsBFbWJL/FTarXw95cjArGrotbWrT++AUW5l8UJPnrIozYGfynfAlPsaqi1l4NAUHVJfxK+zRbFrjxqYxCK3DOYYldBrXUFIBZfSCfor4tdbJTEojYGvtfOAk/s5lNb91yifZZ+DHHecE7GIQ8ZURuDCPO49Idva2ZTe44h/sFP55xKsO5QYjf+DClAMJswSrqxmB1rwExqz9YMWfhvFNnyf1fs4jhycgWiF7QOU+xmUPu2Po78OKNV4lPsmRD4PPWgnAep02ZRNYFT8rwXlU/t09ugvN3OboxV97jpU+k4R7wShwaPkCX46IDN6OQRCOS1s4DHdF0OVAWxGO5n03kZlYid76hT4BfFbk7UxgB57SxwxC6kltJ/z+X4dXnJ8XrcT6lKaITIPeMXxS48xFKkPcSJyWBT2c2SytnGFtM6NnrfR/T2EiOIEnw0oKI2hAiv+0UXtA71kzlc5Bpf6zpB8X0ZbGeph+LXxC7BbPIF2aUWfuzwcVRGvmQYWMr8o+8IhGEyfxDfcHz9zsCeYDZVmzixoHXIdBG7icqHYLvuN9aDukmqVix2m/7QCFWoI6n8KK+dBRy2sD06Oqeio/huLuSmfS2/I3azojYGDGmYFrvKKMPA8V2elpo1Y9EUnmbJQlbUxqDLqV6Bx7ZH0VHrm//VC3FgJHEJEnyygX0VjCX9heOGw2LXWsX1+bVu0uxLQuSe8Qtilyqvnk5DZzmPsdi1RJyeWs/+3z29smQVFrt5BfwgqPLq6cB8zGtnAQ9fi109tf4QX5+satX8BJ9MCMqre4h57SykxG4D1AbXYB0Xb1vsSsqr+zPjXQGL3XoHbILa4NVgcduy2MXnJjhGSFLknoGzSi/vbCPUBqqPY0SxE3yyQJVXZ1QJ+OSm8iTEbiPUhit6VqcKDYldglnGxNIi94yE2G2G2iDQz/nKzR5OrBmxmxm1qbry7z4udpuhNny5GQxxE3wykBu1MRAk++JV5yz2mqEWvH+MCQpOswhBRW0YMaJToRke8FVOf2yI2jCLgrEftSZ28Rl2nkM47bWzG8PLnMRuQ9QCJ2H6CWlN7OZGbQxEGVJRsdsQtcAOYZz9wAk+6q9q5kZtDNayQ2yxoxkNUYsW9LRwwClDWrErL9Rh4f7+rsfHHfaEHB1ADVGL7P9DcpJELTPx1V3Iyqu7eCpe+xLg7eKYpNkQtXDRmaUm9ooLVOnErqy8uoe+NBkiUnSvTWrTFCV9nhmQlVf38CGtRBgRu21Sy9gRMAtZHwM4QfBR3BAL8WIUEbttUsuYJ/c0Cx8EszybaikvhEMX3WuV2vQ7yEnwEUHwUVyAjBOt2MoxYrdVahnChpHgI4Hgo7gAt3TtSRr4gp2WqWVst4wEHwnyozZVb1Da6iG1kpBF91qlllFmnZHgI0B+1KYCPEieWiPICvOtUsthKJ3gIwAVteEtoUGhGYN0X+qSV6c27vOUQRG1MQgKzRikqaWK7rVLLcvVlPujcIfiDobP4KXvgaow3y61HLd2MsGHDaq8OtMDCwrNGMdn+vHAy1AJDcvGqOXIxsbELhW14VrJ78jkGzKoJawc+DT/KrWNiV3RR3FD4CrDWwa1hDHd0FNLhExY1DYkdkUfxUXTgCK3x9kvcCgOnjyUU0sYlCxqUwk+TOAqBfzHHzc8cKjFYhdOSE4tcS6e56JLJPjwIPooLsAY+3M1Vk4z1BJbCI/aJsSuKmpjgAvNdHnUUrUsrk5tE2JXE7WpQH6YmEMtdaayCWoJXx7TZ68Xu6qojcEW678VUyS3SC1xbIBJrV7sqqI2Biv4Q5r3iUUtVc9ZT+1whYuQcCNNeBr86ws/ihuCKDTT51JLvTV6ajdTbNpxqY0m+DBA3Qg7E4YoNPOHSy3pc1NTWxDkcKnNdvcekVFe3b8B6O2ohBCPWipjR0vt+kAYUOzQM54HM1JFlVfnf/GhxMdyRvxJUJEjLbWjNRGjZlOr+tBIRnl1D2F5aINS8vtSeac6as2RFWzYsqnF2wDv20HSj+IC4DT/g4RaaifVUVsdWdFRq/mqpvCjuABzuKqPZcO0Qm11ZAW+EHxq88Wu9KO4ALjQzLuMWkoPaqg9ZvNAbvjU5otd6iYEdwDbnn2dXGqpdUlD7fHICvR9CZLTcr+qKf0oLgCspnrxQLPXFeogu4La08XRQII61XSCTxTij+IC/IBD17UxxaaWJXZF1D6cYk/o8ZFURcNTSfVSRm0M4Bm8Wl2xqWWJXRG15yMrKNAg+XBQ1lc1tVEbA1RoxvrF+IYGVcw1m9qLUAeZcZKDQmSCTwzij+KiGwhFri1C+NRyxK6E2rrQDBhZdAYMzyV6Z9qojQEoD33PnoADMtKROTOr0Ew4kKgomlzsqqM2BmE1Vdf5K0i5pRR3HrVv1m2AZ4g/EJ3gQ4MKSYnOmfiex4VnRAmopZL986h1jqyEI4kO3ErFbl55dQ9+NdXg+ZAkijdK7Zd951kHzGvglZNOM5R/FBfALTQzCCNBEmrTYpdPrXdkJVhsdoJ5Sb+qmVle3YVbaAbZ5hJq02KXT+3SaxqIPVGihuyrmtTsRV94sArNPGE5JTo5Qn1rJ4Na/8LBViQ6TSz6qqY+amNwKQ/dpV5mEbXUASA5teOgwGTwSqDHllwM8XTgY0hFbWIWRYiTyF3MqHP+Qmopl4acWnBkxU8k2YW95mTtHoHYpWxIWX273qyz2MbTimRHyaiECDG1nO/gBbtKjy69h7cBlAJDbRi77i0T4/m23yvop5VH7dgddEj5OM/YDL1Z1E/Z2MLD3Wpo//vcxkuhd939gz/W2jnwbpfIJZ0/+Lx0lpMbjHsJqEHs8eLuiINwxInX/lDioSZOw9r2Hruppff1YjnYOFJpexi5mECMAkRv97+Ntaus9ubM4POwv/qFb4/+91H2QoffIedczf8B8DyfvYx+/lnR79+Pk+VUWsUhhv8BVaPCzb1AzVIAAAAASUVORK5CYII="
+                        alt=""></div></a>
+                        
+
+        </div>
+
+        <div id="right">
+            <div id="search">SEARCH</div>
+            <div><a href="login.html">LOGIN</a></div>
+            <div> </div>
+            <div>HELP</div>
+            <div><i class="fa-solid fa-bag-shopping"></i></div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a id="women" href="women.html">WOMAN</a>
+        <a id="man" href="men.html">MAN</a>
+        <a href="women.html">BEST SELLERSNEW</a>
+        <a href="women.html">BLAZERS</a>
+        <a href="women.html">DRESSES | JUMPSUITS</a>
+        <a href="women.html">SHIRTS</a>
+        <a href="women.html">TROUSERS</a>
+        <a href="women.html">TOPS | CORSETS</a>
+        <a href="women.html">BODYSUITS</a>
+        <a href="women.html">T-SHIRTS</a>
+        <a href="women.html">JEANS</a>
+        <a href="women.html">SKIRTS</a>
+        <a href="women.html">SHORTS | SKORTS</a>
+        <a href="women.html">CO-ORD SETS</a>
+        <a href="women.html">SUITS</a>
+        <a href="women.html">BASICSNEW</a>
+        <a href="men.html">KNITWEAR</a>
+        <a href="men.html">SWEATSHIRTS</a>
+        <a href="men.html">COATS | TRENCH COATS</a>
+        <a href="men.html">JACKETS | OVERSHIRTS</a>
+        <a href="men.html">SHOES</a>
+        <a href="men.html">BAGS</a>
+        <a href="men.html">SWIMWEARNEW</a>
+        <a href="men.html">ACCESSORIES</a>
+        <a href="men.html">PERFUMES</a>
+        <a href="men.html">SPRING BREEZE</a>
+        <a href="men.html">SPECIAL PRICES</a>
+        <a href="men.html">SPECIAL EDITION</a>
+        <a href="men.html">JOIN LIFE</a>
+        
+      </div>
+    <div id="mainpaymentdiv">
+        
+        <div id="optionforpayment" style="margin-left: 15%;margin-top: 70px;"></div>
+    </div>
+
+    <div id="footer">
+        <div id="footer1">
+            <h4>HELP</h4>
+            <p>SHOP AT ZARA.COM</p>
+            <P>PRODUCT</P>
+            <P>PAYMENT</P>
+            <P>SHIPPING</P>
+            <P>EXCHANGES AND RETURNS</P>
+            <P>SHOPS AND RETURNS</P>
+            <P>SHOPS AND COMPANY</P>
+            <P>CLOTHES COLLECTION PROGRAMME</P>
+            <P>MY ACCOUNT</P>
+        
+            
+         </div>
+         <div id="footer2">
+         <h4>FOLLOW US</h4>
+         <P>NEWSLETTER</P>
+         <P>INSTRAGRAM</P>
+         <P>FACEBOOK</P>
+         <P>TWITTER</P>
+         <P>PINTEREST</P>
+         <P>YOUTUBE</P>
+         </div>
+         <div id="footer3">
+             <h4>COMPANY</h4>
+             <P>ABOUT US</P>
+             <P>JOIN LIFE</P>
+             <P>OFFICES</P>
+             <P>STORES</P>
+             <P>WORK WITH US</P>
+         </div>
+        <div id="footer4">
+           <h4>POLICIES</h4>
+           <P>PRIVACY</P>
+           <P>PURCHASE CONDITIONS</P>
+           <P>COOKIE SETTINGS</P>
+        </div>
+        </div>
+        <div id="india">
+         <p>INDIA</p>
+         
+        <div id="english"><p>ENGLISH</p>
+        <p>  © ALL RIGHTS RESERVED</p></div>
+        
+        
+            
+        </div>
+        <div id="login_downer_footer">
+           <p> NAME AND ADDRESS OF THE MANUFACTURER: <br>
+        INDUSTRIA DE DISEÑO TEXTIL, S.A. (INDITEX, S.A.) <br>
+        AVENIDA DE LA DIPUTACIÓN, EDIFICIO INDITEX, 15143, ARTEIXO (A CORUÑA), SPAIN </p>
+        <br>
+        <br><br><br><br><br><br><br><br><br><br><br>
+        
+        
+        </div>
+</body>
+</html>
+<script src="./javascript/Payment.js"></script>
+
+
+
+<script>
+ 
+    var cartpagemaindiv21 = document.createElement("div")
+  
+    var cartpagemaindiv22=document.createElement("div");
+    cartpagemaindiv22.setAttribute("id","cartpagemaindiv22")
+
+
+     var pricedetails = document.createElement("div");
+     pricedetails.setAttribute("id","pricedetails")
+
+     var pricedetailsimg = document.createElement("img")
+     pricedetailsimg.setAttribute("src","https://in.sugarcosmetics.com/desc-images/PriceDetails.svg")
+      var pricedetailsdiv1 = document.createElement("div")
+      pricedetailsdiv1.innerText="Price";
+      var pricedetailsdiv2 = document.createElement("div")
+      pricedetailsdiv2.innerText="Details"
+      pricedetailsdiv2.style.backgroundColor="white"
+
+      pricedetails.append(pricedetailsimg,pricedetailsdiv1,pricedetailsdiv2)
+
+      var pricedetailsmaindiv = document.createElement("div")
+      pricedetailsmaindiv.setAttribute("id","pricedetailsmaindiv")
+
+      var pricedetailsmaindiv1 = document.createElement("div")
+      pricedetailsmaindiv1.setAttribute("id","pricedetailsmaindiv1")
+     
+      var pricedetailsmaindiv1img = document.createElement("img");
+      pricedetailsmaindiv1img.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CartSubtotal.svg")
+       var pricedetailsmaindiv1div1 = document.createElement("div")
+       pricedetailsmaindiv1div1.innerText="Cart Sub Total:"
+        var pricedetailsmaindiv1div2 = document.createElement("div");
+        // pricedetailsmaindiv1div2.innerText=total;
+        pricedetailsmaindiv1div2.innerText=total
+        pricedetailsmaindiv1div2.setAttribute("id","totalprice")
+
+
+
+        pricedetailsmaindiv1.append(pricedetailsmaindiv1img,pricedetailsmaindiv1div1,pricedetailsmaindiv1div2)
+
+        var pricedetailsmaindiv2 = document.createElement("div")
+      pricedetailsmaindiv2.setAttribute("id","pricedetailsmaindiv2")
+     
+      var pricedetailsmaindiv2img = document.createElement("img");
+      pricedetailsmaindiv2img.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Shipping_Cost.svg")
+       var pricedetailsmaindiv2div1 = document.createElement("div")
+       pricedetailsmaindiv2div1.innerText="Shipping Cost:"
+        var pricedetailsmaindiv2div2 = document.createElement("div");
+        pricedetailsmaindiv2div2.innerText="0.00"
+
+
+
+        pricedetailsmaindiv2.append(pricedetailsmaindiv2img,pricedetailsmaindiv2div1,pricedetailsmaindiv2div2)
+
+        var pricedetailsmaindiv3 = document.createElement("div")
+      pricedetailsmaindiv3.setAttribute("id","pricedetailsmaindiv3")
+     
+      var pricedetailsmaindiv3img = document.createElement("img");
+      pricedetailsmaindiv3img.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Discount.svg")
+       var pricedetailsmaindiv3div1 = document.createElement("div")
+       pricedetailsmaindiv3div1.innerText="Discount Applied:"
+        var pricedetailsmaindiv3div2 = document.createElement("div");
+        //discount price
+        pricedetailsmaindiv3div2.innerText=50;
+
+
+
+        pricedetailsmaindiv3.append(pricedetailsmaindiv3img,pricedetailsmaindiv3div1,pricedetailsmaindiv3div2)
+
+        var pricedetailsmaindiv4 = document.createElement("div")
+      pricedetailsmaindiv4.setAttribute("id","pricedetailsmaindiv4")
+     
+      var pricedetailsmaindiv4img = document.createElement("img");
+      pricedetailsmaindiv4img.setAttribute("src","https://in.sugarcosmetics.com/desc-images/AmountPayable.svg")
+       var pricedetailsmaindiv4div1 = document.createElement("div")
+       pricedetailsmaindiv4div1.innerHTML="Amount Payable:<p id=puja>Including ₹220.42 in taxes</p>"
+        var pricedetailsmaindiv4div2 = document.createElement("div");
+        //amount payable
+         pricedetailsmaindiv4div2.innerText=pricedetailsmaindiv1div2.innerText-pricedetailsmaindiv3div2.innerText
+        // pricedetailsmaindiv4div2.innerText="puja"
+
+
+        pricedetailsmaindiv4.append(pricedetailsmaindiv4img,pricedetailsmaindiv4div1,pricedetailsmaindiv4div2)
+
+     pricedetailsmaindiv.append(pricedetailsmaindiv1,pricedetailsmaindiv2,pricedetailsmaindiv3,pricedetailsmaindiv4)
+
+   
+
+
+    cartpagemaindiv22.append(pricedetails,pricedetailsmaindiv)
+
+
+    document.querySelector("#totalpriceinformation").append(cartpagemaindiv21,cartpagemaindiv22)
+
+   
+</script>
+
+
+
+<!-- optionforpayment -->
+<script>
+    var finaldivOfpaymentPage = document.createElement("div")
+    finaldivOfpaymentPage.setAttribute("id","finaldivOfpaymentPage")
+    
+    var finalimgofpayementpage = document.createElement("img")
+    finalimgofpayementpage.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Offers_price_details.svg")
+    finalimgofpayementpage.setAttribute("id","finalimgofpayementpage")
+    
+    var finaldivOfpaymentPage1 = document.createElement("div")
+    finaldivOfpaymentPage1.innerText="Payment"
+    finaldivOfpaymentPage1.setAttribute("id","finaldivOfpaymentPage1")
+    var finaldivOfpaymentPage2 = document.createElement("div")
+    finaldivOfpaymentPage2.innerText="Method"
+    finaldivOfpaymentPage2.setAttribute("id","finaldivOfpaymentPage2")
+
+    finaldivOfpaymentPage.append(finalimgofpayementpage,finaldivOfpaymentPage1,finaldivOfpaymentPage2)
+    
+    var paymentDetailsdiv = document.createElement("div")
+    paymentDetailsdiv.setAttribute("id","paymentDetailsdiv")
+ 
+    document.querySelector("#optionforpayment").append(finaldivOfpaymentPage,paymentDetailsdiv)
+ </script>
+<script>
+    var selectPaymentMethod = document.createElement("div")
+    selectPaymentMethod.innerText="Select a Payment Method"
+    selectPaymentMethod.setAttribute("id","selectPaymentMethod")
+
+    //first
+    var instantPay = document.createElement("div")
+    instantPay.setAttribute("id","instantPay")
+     
+    var instantPayimg = document.createElement("img")
+    instantPayimg.setAttribute("src","https://in.sugarcosmetics.com/paymentIcons/upi.svg")
+    instantPayimg.setAttribute("class","PaymentPageimg")
+    var instantPaydiv = document.createElement("div")
+    instantPaydiv.innerText="Instant Pay Using Other (Gpay,PhonePe,BHIM etc.)"
+    instantPaydiv.setAttribute("class","PaymentPagediv")
+    var tickbutton = document.createElement("img")
+    tickbutton.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Check.svg")
+    tickbutton.setAttribute("id","tickbutton")
+    var tickbutton1 = document.createElement("img")
+    tickbutton1.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CheckFilled.svg")
+    tickbutton1.setAttribute("id","tickbutton1")
+
+    instantPay.append(instantPayimg,instantPaydiv,tickbutton,tickbutton1)
+    var flag = false;
+    instantPay.addEventListener("click",function(){
+       flag=!flag;
+       if(flag==false)
+       {
+           hiddendiv1.style.display="none"
+           tickbutton1.style.display="none"
+           tickbutton.style.display="block"
+           instantPay.style.backgroundColor="rgb(241,238,238)"
+           hiddendiv1.style.height="0px"
+       }
+       else{
+           hiddendiv1.style.display="block"
+           tickbutton.style.display="none"
+           tickbutton1.style.display="block"
+        //    instantPay.style.backgroundColor="white"
+           hiddendiv1.style.height="60px"
+       }
+    })
+
+    var hiddendiv1 = document.createElement('div')
+    hiddendiv1.setAttribute("id","hiddendiv1")
+    var hiddendiv1input = document.createElement("input")
+    hiddendiv1input.style.border="none"
+    hiddendiv1input.setAttribute("placeholder","Enter UPI ID")
+    hiddendiv1input.setAttribute("id","hiddendiv1input")
+    hiddendiv1input.style.outline="none"
+   var hiddendiv1hr = document.createElement("hr")
+   hiddendiv1hr.style.width="350px"
+   hiddendiv1hr.style.marginLeft="0px"
+   var upidiv = document.createElement("div")
+   upidiv.style.display="flex"
+   upidiv.style.backgroundColor="white"
+   upidiv.style.color="deeppink"
+   upidiv.style.marginTop="10px"
+   var yourUPI = document.createElement("h5")
+   yourUPI.innerText="Your UPI ID is"
+   var upicode = document.createElement("h5")
+   upicode.innerText=9835
+   upicode.style.marginLeft="3px"
+    
+   upidiv.append(yourUPI,upicode)
+   hiddendiv1.append(hiddendiv1input,hiddendiv1hr,upidiv)
+
+  
+
+</script>
+<script>    
+   //second
+   var MobileWallet = document.createElement("div")
+    MobileWallet.setAttribute("id","MobileWallet")
+     
+    var instantPayimg = document.createElement("img")
+    instantPayimg.setAttribute("src","https://in.sugarcosmetics.com/paymentIcons/wallets.svg")
+    instantPayimg.setAttribute("class","PaymentPageimg")
+    var instantPaydiv = document.createElement("div")
+    instantPaydiv.innerText="Mobile Wallets (PhonePe,Freecharge etc.)"
+    instantPaydiv.setAttribute("class","PaymentPagediv")
+    var tickbutton2 = document.createElement("img")
+    tickbutton2.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Check.svg")
+    tickbutton2.setAttribute("id","tickbutton2")
+    var tickbutton3 = document.createElement("img")
+    tickbutton3.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CheckFilled.svg")
+    tickbutton3.setAttribute("id","tickbutton3")
+
+    MobileWallet.append(instantPayimg,instantPaydiv,tickbutton2,tickbutton3)
+    var flag = false;
+    MobileWallet.addEventListener("click",function(){
+       flag=!flag;
+       if(flag==false)
+       {
+           hiddendiv2.style.display="none"
+           tickbutton3.style.display="none"
+           tickbutton2.style.display="block"
+           MobileWallet.style.backgroundColor="rgb(241,238,238)"
+       }
+       else{
+           hiddendiv2.style.display="block"
+           tickbutton2.style.display="none"
+           tickbutton3.style.display="block"
+        //    MobileWallet.style.backgroundColor="white"
+
+       }
+    })
+
+    var hiddendiv2 = document.createElement('div')
+    hiddendiv2.setAttribute("id","hiddendiv2")
+
+   var innerofhidden21 = document.createElement("div")
+   innerofhidden21.setAttribute("class","innerofhidden2")
+   var mobileimg1 = document.createElement("img")
+   mobileimg1.setAttribute("src","https://in.sugarcosmetics.com/payment_types/wallets/Amazonpay.svg")
+   mobileimg1.setAttribute("class","mobileimg")
+   var mobilediv1 = document.createElement("div")
+   mobilediv1.innerText="Amazonpay"
+   mobilediv1.setAttribute("class","mobilediv")
+   innerofhidden21.append(mobileimg1,mobilediv1)
+   
+   var innerofhidden22 = document.createElement("div")
+   innerofhidden22.setAttribute("class","innerofhidden2")
+   var mobileimg2 = document.createElement("img")
+   mobileimg2.setAttribute("src","https://in.sugarcosmetics.com/payment_types/wallets/Freecharge.svg")
+   mobileimg2.setAttribute("class","mobileimg")
+   var mobilediv2 = document.createElement("div")
+   mobilediv2.innerText="Freecharge"
+   mobilediv2.setAttribute("class","mobilediv")
+   innerofhidden22.append(mobileimg2,mobilediv2)
+
+   var innerofhidden23 = document.createElement("div")
+   innerofhidden23.setAttribute("class","innerofhidden2")
+   var mobileimg3 = document.createElement("img")
+   mobileimg3.setAttribute("src","https://in.sugarcosmetics.com/payment_types/wallets/Jiomoney.svg")
+   mobileimg3.setAttribute("class","mobileimg")
+   var mobilediv3 = document.createElement("div")
+   mobilediv3.innerText="Jiomoney"
+   mobilediv3.setAttribute("class","mobilediv")
+   innerofhidden23.append(mobileimg3,mobilediv3)
+
+
+   var innerofhidden24 = document.createElement("div")
+   innerofhidden24.setAttribute("class","innerofhidden2")
+   var mobileimg4 = document.createElement("img")
+   mobileimg4.setAttribute("src","https://in.sugarcosmetics.com/payment_types/wallets/Phonepe.svg")
+   mobileimg4.setAttribute("class","mobileimg")
+   var mobilediv4 = document.createElement("div")
+   mobilediv4.innerText="Phonepe"
+   mobilediv4.setAttribute("class","mobilediv")
+   innerofhidden24.append(mobileimg4,mobilediv4)
+
+   
+
+   hiddendiv2.append(innerofhidden21,innerofhidden22,innerofhidden23,innerofhidden24)
+
+
+
+</script>  
+<script>  
+    //Third
+    var Credit = document.createElement("div")
+    Credit.setAttribute("id","Credit")
+     
+    var instantPayimg = document.createElement("img")
+    instantPayimg.setAttribute("src","https://in.sugarcosmetics.com/paymentIcons/creditDebit.svg")
+    instantPayimg.setAttribute("class","PaymentPageimg")
+    var instantPaydiv = document.createElement("div")
+    instantPaydiv.innerText="Credit/Debit Cards (Visa ,Master,Ruppay,Amex etc.)"
+    instantPaydiv.setAttribute("class","PaymentPagediv")
+    var tickbutton4 = document.createElement("img")
+    tickbutton4.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Check.svg")
+    tickbutton4.setAttribute("id","tickbutton4")
+    var tickbutton5 = document.createElement("img")
+    tickbutton5.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CheckFilled.svg")
+    tickbutton5.setAttribute("id","tickbutton5")
+
+    Credit.append(instantPayimg,instantPaydiv,tickbutton4,tickbutton5)
+    var flag = false;
+    Credit.addEventListener("click",function(){
+       flag=!flag;
+       if(flag==false)
+       {
+           hiddendiv3.style.display="none"
+           tickbutton5.style.display="none"
+           tickbutton4.style.display="block"
+           Credit.style.backgroundColor="rgb(241,238,238)"
+       }
+       else{
+           hiddendiv3.style.display="block"
+           tickbutton4.style.display="none"
+           tickbutton5.style.display="block"
+        //    Credit.style.backgroundColor="white"
+
+       }
+    })
+
+    var hiddendiv3 = document.createElement('div')
+    hiddendiv3.setAttribute("id","hiddendiv3")
+
+   var creditdiv1 = document.createElement("div")
+   creditdiv1.setAttribute("id","creditdiv1")
+
+   var creditinput1 = document.createElement("input")
+   creditinput1.setAttribute("placeholder","Card Number")
+   creditinput1.setAttribute("id","creditinput1")
+   var creditimg1 = document.createElement("img")
+   creditimg1.setAttribute("src","https://in.sugarcosmetics.com/payment_types/Cards.svg")
+   creditimg1.setAttribute("id","creditimg1")
+   
+   creditdiv1.append(creditinput1,creditimg1)
+
+   var creditinput2 = document.createElement("input")
+   creditinput2.setAttribute("placeholder","Card Holder Number")
+   creditinput2.setAttribute("id","creditinput2")
+
+   var creditdiv2 = document.createElement("div")
+   creditdiv2.setAttribute("id","creditdiv2")
+   var creditinput3 = document.createElement("input")
+   creditinput3.setAttribute("placeholder","Expiry (MM/YY)")
+   creditinput3.setAttribute("id","creditinput3")
+   var creditinput4 = document.createElement("input")
+   creditinput4.setAttribute("placeholder","CVV")
+   creditinput4.setAttribute("id","creditinput4")
+  
+   creditdiv2.append(creditinput3,creditinput4)
+
+   var creditdiv3 = document.createElement("div")
+   creditdiv3.setAttribute("id","creditdiv3")
+   var creditimg2 = document.createElement("input")
+   creditimg2.setAttribute("type","checkbox")
+   creditimg2.setAttribute("id","creditimg2")
+   
+   var credittext = document.createElement("div")
+   credittext.innerText="We will securely save this card for faster paymnet experience (CVV will not saved). If required you can remove this card from My Account > Payment Methods"
+   credittext.setAttribute("id","credittext")
+
+   creditdiv3.append(creditimg2,credittext)
+   hiddendiv3.append(creditdiv1,creditinput2,creditdiv2,creditdiv3)
+
+</script> 
+<script>  
+   //Fourth
+   var NetBankig = document.createElement("div")
+    NetBankig.setAttribute("id","NetBankig")
+     
+    var instantPayimg = document.createElement("img")
+    instantPayimg.setAttribute("src","https://in.sugarcosmetics.com/paymentIcons/netBanking.svg")
+    instantPayimg.setAttribute("class","PaymentPageimg")
+    var instantPaydiv = document.createElement("div")
+    instantPaydiv.innerText="Net Banking (ICICI,HDFC,SBI etc.)"
+    instantPaydiv.setAttribute("class","PaymentPagediv")
+    var tickbutton6 = document.createElement("img")
+    tickbutton6.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Check.svg")
+    tickbutton6.setAttribute("id","tickbutton6")
+    var tickbutton7 = document.createElement("img")
+    tickbutton7.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CheckFilled.svg")
+    tickbutton7.setAttribute("id","tickbutton7")
+
+    NetBankig.append(instantPayimg,instantPaydiv,tickbutton6,tickbutton7)
+    var flag = false;
+    NetBankig.addEventListener("click",function(){
+       flag=!flag;
+       if(flag==false)
+       {
+           hiddendiv4.style.display="none"
+           tickbutton7.style.display="none"
+           tickbutton6.style.display="block"
+           NetBankig.style.backgroundColor="rgb(241,238,238)"
+       }
+       else{
+           hiddendiv4.style.display="block"
+           tickbutton6.style.display="none"
+           tickbutton7.style.display="block"
+        //    NetBankig.style.backgroundColor="white"
+
+       }
+    })
+
+    var hiddendiv4 = document.createElement('div')
+    hiddendiv4.setAttribute("id","hiddendiv4")
+
+    var mainnetbankingdiv = document.createElement("div")
+    mainnetbankingdiv.setAttribute("id","mainnetbankingdiv")
+
+    var netBankingdiv1 = document.createElement("div")
+    netBankingdiv1.setAttribute("class","netBankingdiv")
+    var netBankingimg1 = document.createElement("img")
+    netBankingimg1.setAttribute("src","https://in.sugarcosmetics.com/payment_types/BOI.svg")
+    netBankingimg1.setAttribute("class","netBankingimg")
+    var innernetbankingdiv1 = document.createElement("div")
+    innernetbankingdiv1.innerText="BOI"
+    innernetbankingdiv1.setAttribute("class","innernetbankingdiv")
+
+    netBankingdiv1.append(netBankingimg1,innernetbankingdiv1)
+
+    var netBankingdiv2 = document.createElement("div")
+    netBankingdiv2.setAttribute("class","netBankingdiv")
+    var netBankingimg2 = document.createElement("img")
+    netBankingimg2.setAttribute("src","https://in.sugarcosmetics.com/payment_types/hdfcbank.svg")
+    netBankingimg2.setAttribute("class","netBankingimg")
+    var innernetbankingdiv2 = document.createElement("div")
+    innernetbankingdiv2.innerText="HDFC"
+    innernetbankingdiv2.setAttribute("class","innernetbankingdiv")
+
+    netBankingdiv2.append(netBankingimg2,innernetbankingdiv2)
+
+    var netBankingdiv3 = document.createElement("div")
+    netBankingdiv3.setAttribute("class","netBankingdiv")
+    var netBankingimg3 = document.createElement("img")
+    netBankingimg3.setAttribute("src","https://in.sugarcosmetics.com/payment_types/ICICI.svg")
+    netBankingimg3.setAttribute("class","netBankingimg")
+    var innernetbankingdiv3 = document.createElement("div")
+    innernetbankingdiv3.innerText="ICICI"
+    innernetbankingdiv3.setAttribute("class","innernetbankingdiv")
+
+    netBankingdiv3.append(netBankingimg3,innernetbankingdiv3)
+
+    var netBankingdiv4 = document.createElement("div")
+    netBankingdiv4.setAttribute("class","netBankingdiv")
+    var netBankingimg4 = document.createElement("img")
+    netBankingimg4.setAttribute("src","https://in.sugarcosmetics.com/payment_types/sbi.svg")
+    netBankingimg4.setAttribute("class","netBankingimg")
+    var innernetbankingdiv4 = document.createElement("div")
+    innernetbankingdiv4.innerText="SBI"
+    innernetbankingdiv4.setAttribute("class","innernetbankingdiv")
+
+    netBankingdiv4.append(netBankingimg4,innernetbankingdiv4)
+
+    var netBankingdiv5 = document.createElement("div")
+    netBankingdiv5.setAttribute("class","netBankingdiv")
+    var netBankingimg5 = document.createElement("img")
+    netBankingimg5.setAttribute("src","https://in.sugarcosmetics.com/payment_types/yesbank.svg")
+    netBankingimg5.setAttribute("class","netBankingimg")
+    var innernetbankingdiv5 = document.createElement("div")
+    innernetbankingdiv5.innerText="YES"
+    innernetbankingdiv5.setAttribute("class","innernetbankingdiv")
+
+    netBankingdiv5.append(netBankingimg5,innernetbankingdiv5)
+
+    var netBankingselect = document.createElement("select")
+    netBankingselect.setAttribute("id","netBankingselect")
+    var netBankingoption = document.createElement("option")
+    netBankingoption.innerText="View More"
+     
+    netBankingselect.append(netBankingoption)
+
+    mainnetbankingdiv.append(netBankingdiv1,netBankingdiv2,netBankingdiv3,netBankingdiv4,netBankingdiv5,netBankingselect)
+    hiddendiv4.append(mainnetbankingdiv)
+
+</script>
+<script>
+    //Fifth
+    var CashOnDelivery = document.createElement("div")
+    CashOnDelivery.setAttribute("id","CashOnDelivery")
+     
+    var instantPayimg = document.createElement("img")
+    instantPayimg.setAttribute("src","https://in.sugarcosmetics.com/paymentIcons/cod.svg")
+    instantPayimg.setAttribute("class","PaymentPageimg")
+    var instantPaydiv = document.createElement("div")
+    instantPaydiv.innerText="Cash on Delivery"
+    instantPaydiv.setAttribute("class","PaymentPagediv")
+    var tickbutton8 = document.createElement("img")
+    tickbutton8.setAttribute("src","https://in.sugarcosmetics.com/desc-images/Check.svg")
+    tickbutton8.setAttribute("id","tickbutton8")
+    var tickbutton9 = document.createElement("img")
+    tickbutton9.setAttribute("src","https://in.sugarcosmetics.com/desc-images/CheckFilled.svg")
+    tickbutton9.setAttribute("id","tickbutton9")
+
+    CashOnDelivery.append(instantPayimg,instantPaydiv,tickbutton8,tickbutton9)
+    var flag = false;
+    CashOnDelivery.addEventListener("click",function(){
+       flag=!flag;
+       if(flag==false)
+       {
+           hiddendiv5.style.display="none"
+           tickbutton9.style.display="none"
+           tickbutton8.style.display="block"
+           CashOnDelivery.style.backgroundColor="rgb(241,238,238)"
+       }
+       else{
+           hiddendiv5.style.display="block"
+           tickbutton8.style.display="none"
+           tickbutton9.style.display="block"
+        //    CashOnDelivery.style.backgroundColor="white"
+
+       }
+    })
+
+    var hiddendiv5 = document.createElement('div')
+    hiddendiv5.setAttribute("id","hiddendiv5")
+
+   var CashOnDeliverydiv = document.createElement("div")
+   CashOnDeliverydiv.innerText="We recommend using a digital payment method for completing the payment"
+   CashOnDeliverydiv.setAttribute("id","CashOnDeliverydiv")
+   hiddendiv5.append(CashOnDeliverydiv)
+
+</script>
+<script>
+   var paymentdivunique = document.createElement("div")
+   paymentdivunique.innerText="Proceed To Payment"
+   paymentdivunique.setAttribute("id","paymentdivunique")
+
+
+   
+  
+    paymentdivunique.addEventListener("click",function(){
+        if(hiddendiv1input.value==9835){
+            alert("Payment Successful!")
+            window.location.href="./index.html"
+        }
+        else{
+            alert("Payment Failed!")
+        }
+       
+    }) 
+  
+
+</script>
+<script>
+    document.querySelector("#paymentDetailsdiv").append(selectPaymentMethod,instantPay,hiddendiv1
+    ,MobileWallet,hiddendiv2
+    ,Credit,hiddendiv3
+    ,NetBankig,hiddendiv4
+    ,CashOnDelivery,hiddendiv5,paymentdivunique)
+</script>
+
+<script>
+    
+</script>
