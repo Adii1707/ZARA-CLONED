@@ -1,8 +1,8 @@
-let redurdom = (womensdata, cont)=> {
+let redurdom = (data, cont)=> {
     // let cont = document.getElementById("container");
      // cont.innerHTML = null
 
-    womensdata.forEach((el)=> {
+    data.forEach((el)=> {
         let div = document.createElement("div")
         let image = document.createElement("img");
        

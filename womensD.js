@@ -1,6 +1,7 @@
 
 
 let data = JSON.parse(localStorage.getItem("detaildata"));
+let cartdata = JSON.parse(localStorage.getItem("cart")) || [];
 
 let redurdom = (data)=> {
     let pic = document.getElementById("pic");
@@ -30,6 +31,11 @@ let redurdom = (data)=> {
            bag.innerText = "Add To Bag"
            bag.style.backgroundColor = "black"
            bag.style.color = "white";
+           bag.onclick = ()=>{
+            addtobag(data)
+           }
+
+
            let div1 = document.createElement("div");
            let line = document.createElement("hr");
            let line1 = document.createElement("hr");
@@ -48,6 +54,9 @@ let redurdom = (data)=> {
            p2.innerText = "M";
            p3.innerText = "L";
            p4.innerText = "XL";
+
+          
+
         div1.append(line,p1,p2,p3,p4,line1)
         div.append(image,image1,image2,image3);
         detail.append(Name,p,Price,div1,bag,p5,p6)
@@ -55,3 +64,16 @@ let redurdom = (data)=> {
 
 };
 redurdom(data);
+
+let addtobag = (el)=> {
+
+    let cdata = {
+        image: el.img,
+        Name: el.name,
+        Price: el.price
+    };
+    cartdata.push(cdata);
+  localStorage.setItem("cart",JSON.stringify(cartdata));
+  alert("product added successfully");
+    
+    }
