@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://kit.fontawesome.com/985c64737c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        .deletebtn{
+            display: flex;;
+            width:20%;
+            margin-left:100%; ;
+            padding-top: 10px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            margin-top: -25%;
+
+        }
+        #cart{
+            margin-top: -30px;
+            height: 200px;
+            width:40%;
+            margin-left: 6%;;
+        }
+        h2{
+            margin-left:110px; 
+               margin-top:100px ;
+            color:black;
+        }
+       
+        .wish{
+            margin-top: auto;
+            display: flex;
+        }
+        .wish>div{
+            color:black
+        }
+        .shopping_bracket{
+            margin-top: 5%;;
+           
+        }
+        .shoping_braket:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .wishlist{
+            margin-top: 100px;
+        }
+        .wishlist:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .continue{
+    width:100px;
+     height: 30px;
+}
+.continue:hover{
+    cursor: pointer;
+}
+#heart{
+    margin-left:12px;
+}
+#heart:hover{
+   color: red;
+   
+}
+.deletebtn:hover{
+    cursor: pointer;
+}
+.cart_img{
+    margin-top:40px;
+    cursor: pointer;
+}
+#kulpaisa{
+    color: black;
+    /* margin-left: 300px; */
+    font-size: 25px;
+    font-weight: bold;
+    /* margin-top: 20px; */
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+       
+        <div id="zara">
+            <span id="menu" id="humburger" style="font-size:30px;cursor:pointer;color:black;" onclick="openNav()">&#9776;</span>  
+            <div> <a href="index.html">
+                    <img src="data:image/png;base64,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"
+                        alt=""></div></a>
+                        
+
+        </div>
+
+        <div id="right">
+            <div id="search">SEARCH</div>
+            <div><a href="login.html">LOGIN</a></div>
+            <div> </div>
+            <div>HELP</div>
+            <div><i class="fa-solid fa-bag-shopping "></i> <i class="shop_bag"></i></div>
+            <div ><button class="continue">CONTINUE</button></div>
+        </div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a id="women" href="women.html">WOMAN</a>
+        <a id="man" href="men.html">MAN</a>
+        <a href="men.html">BEST SELLERSNEW</a>
+        <a href="men.html">BLAZERS</a>
+        <a href="men.html">DRESSES | JUMPSUITS</a>
+        <a href="men.html">SHIRTS</a>
+        <a href="men.html">TROUSERS</a>
+        <a href="men.html">TOPS | CORSETS</a>
+        <a href="men.html">BODYSUITS</a>
+        <a href="men.html">T-SHIRTS</a>
+        <a href="men.html">JEANS</a>
+        <a href="men.html">SKIRTS</a>
+        <a href="men.html">SHORTS | SKORTS</a>
+        <a href="men.html">CO-ORD SETS</a>
+        <a href="men.html">SUITS</a>
+        <a href="men.html">BASICSNEW</a>
+        <a href="men.html">KNITWEAR</a>
+        <a href="men.html">SWEATSHIRTS</a>
+        <a href="men.html">COATS | TRENCH COATS</a>
+        <a href="men.html">JACKETS | OVERSHIRTS</a>
+        <a href="women.html">SHOES</a>
+        <a href="women.html">BAGS</a>
+        <a href="women.html">SWIMWEARNEW</a>
+        <a href="women.html">ACCESSORIES</a>
+        <a href="women.html">PERFUMES</a>
+        <a href="women.html">SPRING BREEZE</a>
+        <a href="women.html">SPECIAL PRICES</a>
+        <a href="women.html">SPECIAL EDITION</a>
+        <a href="women.html">JOIN LIFE</a>
+        
+      </div>
+   <div class="wish">
+   <div> <h2 class="shoping_braket">SHOPPING BAG ()</h2></div>
+    <div><h2 class="wishlist">WISHLIST <span id="heart"><i class="fa-solid fa-heart-circle-plus"></i></span></h2></div>
+    </div>
+    <div style="display: flex;margin-top: 20px;margin-left: 300px;">
+        <div style="font-weight: bold;font-size: 20px;margin-top: 5px;margin-right: 2px;">₹</div>
+        <div id="kulpaisa"></div>
+    </div>
+   
+    <div id="cart"></div>
+
+   
+</body>
+</html>
+<script>
+
+    var cartArr=JSON.parse(localStorage.getItem("detaildata"))||[];
+    var length = cartArr.length;
+   
+    console.log(length)
+   var qty=document.querySelector(".shoping_braket");
+   qty.innerText=`SHOPPING BAG   ${(length)}`
+   document.querySelector(".shop_bag").innerHTML= `${length}`
+   document.querySelector(".shop_bag").style.color="white"
+    function displayData(cartArr){
+    document.querySelector("#cart").innerHTML=null; 
+    cartArr.map(function(elem,index){
+    var box = document.createElement("div");
+    box.setAttribute("class","cart_img")
+    var image= document.createElement("img");
+    image.src=elem.imageUrl;
+    image.setAttribute("class","img")
+
+    var para = document.createElement("p");
+    para.innerText=elem.brandName;
+    para.setAttribute("class","p")
+
+    var price = document.createElement("p");
+    price.innerText=elem.priceOf;
+    price.setAttribute("class","rs")
+    var btn = document.createElement("button");
+    btn.innerText="DELETE";
+    btn.style.backgroundColor="white";
+    btn.style.color="black"
+    btn.setAttribute("class","deletebtn")
+    btn.addEventListener("click",function(){
+    delete_remove(elem.id);
+
+      })
+      box.append(image,para,price,btn);
+      document.querySelector("#cart").append(box);
+    })
+    }
+    var totalprice=cartArr.reduce(function(sum,elem){
+        return sum+Number(elem.priceOf);
+    },0)
+      console.log(totalprice)
+     var totaldiv = document.createElement("div");
+     totaldiv.setAttribute("class","totalclass")
+     totaldiv.innerText=totalprice;
+     document.querySelector("#kulpaisa").append(totaldiv);
+
+    displayData(cartArr);
+    function delete_remove(id){
+        var filterArr=JSON.parse(localStorage.getItem("detaildata"))||[]; 
+        var deletedArr=filterArr.filter(function(elem){
+            return elem.id!=id;
+            
+            
+        })
+         totalprice=deletedArr.reduce(function(sum,elem){
+        return sum+Number(elem.priceOf);
+    },0)
+    //  totaldiv = document.createElement("div");
+     totaldiv.innerText=totalprice;
+     document.querySelector("#kulpaisa").append(totaldiv);
+     
+        qty.innerText=`SHOPPING BAG  ${(deletedArr.length)}`
+        displayData(deletedArr);
+       
+         localStorage.setItem("detaildata ",JSON.stringify(deletedArr));
+        
+    }
+    document.querySelector(".continue").addEventListener("click",continuepage)
+    function continuepage(){
+        window.location.href="checkout.html"
+
+    }
+    // -------------------------navbarhumburger--------------------------
+
+    function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>

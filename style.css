@@ -1,0 +1,411 @@
+body{
+    background-color:white;
+}
+
+/* ----------------------------NAVBAR-------------------------------------------- */
+
+
+#man{
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 40px;;
+    margin-top: 20px;;
+}
+
+#women{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 40px;;
+}
+
+  #navbar {
+      display: flex;
+      width: 100%;
+      color: black;
+      text-decoration: none;
+      position: sticky;
+      top: 0%;
+      justify-content: space-between;
+      z-index: 1;
+  }
+
+  #navbar>div {
+      margin-top: 20px;
+      font-size: 14px;
+      position: sticky;
+
+  }
+
+  div>a {
+      text-decoration: none;
+      color: black;
+  }
+
+  #navbar a:hover {
+      cursor: pointer;
+      color: black;
+  }
+
+  #zara>div{
+      margin-left: 40%;
+      font-size: 40px;
+  }
+  
+  #zara>div img{
+      margin-top: -40px;
+      width:150%;
+      height:100px;
+  }
+ 
+
+  #right {
+    
+      gap: 20px;
+      display: flex;
+      padding-right: 60px;
+      cursor: pointer;
+      /* margin-top: 40px; */
+  }
+
+  #search {
+      text-decoration: underline;
+      font-size:14px;
+      padding-right: 60px;;
+  }
+  .img {
+    justify-content: center;
+    display: flex;
+}
+
+#search+div>a{
+    margin-top: -50px;
+    font-size:14px;
+}
+
+/* ---------------------------HOME PAGE----------------------------------------- */
+
+
+
+#home_pehli_img{
+    margin-top: 3%;
+}
+#home_last_img{
+    margin-bottom: 20%;
+}
+#bigimg{
+     display:block;
+     width: 500%
+}
+#foot{
+    color:black;
+    display: flex;
+    gap:5%;
+    font-size: 14px;
+  
+    padding-left: 10%;
+    position: sticky;
+    bottom: 0%
+}  
+
+
+
+
+/* ---------------------------------LOGIN------------------------------------------------ */
+
+
+input{
+
+    background-color:WHITE;
+    padding-bottom: 15px;
+    color: black;
+    
+   
+    justify-content: start;
+    width:120%;
+    cursor: pointer;   
+   
+}
+
+#mail{
+    border:none;
+    border-bottom:1px solid black;
+}
+#password{
+    border:none;
+    border-bottom:1px solid black;
+}
+h3{
+    color: black;
+    padding-bottom: 15px;
+    padding-left: 4%;
+}
+p{
+    color: black;
+    font-size: 10px;
+    padding-top: 10px;
+   
+}
+
+#login{
+   background-color:black;
+   margin-top: 8px;
+   width:120%;
+   height: 40px;
+   padding-bottom: 2px;
+   color:white;
+   text-align: left;
+   text-align: center;
+}
+#loginpage{
+    margin-top: 10%;
+    display: flex;
+  justify-content: space-around;
+  color:black;
+}
+button{
+    width:70%;
+    height:40px;  
+   
+}
+button a{
+    color:black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#footer{
+display:flex;
+cursor: pointer;
+color: black;
+justify-content: start;
+padding-left: 15%;
+gap:30px;
+margin-top: 15%;
+line-height: 0px;
+ 
+}
+#footer>div :hover{ 
+text-decoration: underline;
+}
+#login_downer_footer{
+margin-top: 8%;
+color: black;
+padding-left: 15%;
+
+}
+#india{
+color: black;
+margin-top: 15%;
+padding-left: 15%;
+display: flex;
+gap:65%;
+}
+#india p{
+font-size: 14px;
+}
+#english{
+display: flex;
+gap:25px;
+}
+#india>div{
+    font-size: 19px;
+}
+/* -----------------------------------CREATE ACCOUNT-------------------------------------------------- */
+      
+#check{
+    height: 40px;
+    width:15%;
+    /* border: 1px solid black; */
+    color: black;
+    display: flex;
+    margin-left:14%;
+    margin-top: 3%;
+    margin-bottom: 3%;;
+    /* border-radius: 50%; */
+  
+}
+.p{
+    color:black;
+    font-size: 15px;
+    margin-top: -10px;
+    margin-right: 5px;;
+}
+.c{
+    color:black;
+    font-size: 15px;
+    margin-top: -10px;;
+}
+
+.personal_h2{
+    margin-top: 10%;
+    font-size: 19px;
+    margin-left:200px;
+
+}
+#create_account{
+    width:30%;
+    margin-left: 15%;
+}
+#submit{
+background-color:black;
+width:120%;
+color:white;
+text-align: left;
+}  
+
+/* --------------------------  SIDE BAR------------------------------------- */
+body {
+    font-family: "Lato", sans-serif;
+  }
+  #menu{
+      
+      margin-left: 5%;
+  }
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /* background-color: #111; */
+    background-color: white;
+    color: black;
+    /* margin-top: 150px; */
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    /* padding: 8px 8px 8px 32px; */
+    text-decoration: none;
+    font-size: 14px;
+    color:black;
+    display: block;
+    transition: 0.3s;
+    padding-top: 4px;;
+    padding-left: 16px;;
+  }
+  
+  .sidenav a:hover {
+    color:black;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+
+  /* -----------------------------MAN.PAGE_______WOMEN.PAGE---------------------------------- */
+  #container:hover{
+      cursor: pointer;
+  }
+  #container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    /* gap:30px; */
+    margin:auto;
+    justify-content: center;
+  
+
+}
+.img{
+    height:auto;
+    width: 70%;
+    /* margin: auto; */
+    margin-left: 15%;
+    margin-top: 20%;
+}
+.p{
+    text-align: center;
+}
+.rs{
+    text-align: center; 
+    font-size: 19px;;
+}
+
+
+/* -------------------------------------BAG-------------------------------------------------- */
+#men_left{
+    display: flex;
+     
+ }
+ #paradiv{
+     padding-top: 14%; 
+      padding-left: 8%;
+    
+ }
+ #paradiv p {
+    
+     text-align: left;
+     font-size: 15px;
+    
+     color: black;
+ }
+ #img_js{
+     /* justify-content: center; */
+     
+     height:800px;
+     width: 70%;
+     margin: auto;
+     margin-left: 13%;
+     margin-top: 5%;
+     margin-bottom: 20%;
+
+ }
+ #view:hover {
+     cursor: pointer;
+ }
+ #view{
+     text-decoration: underline;
+     
+ }
+h4{
+color: black;  
+}
+h5{
+color: black;
+}
+button{
+color:black;
+
+width:105%;
+height:40px;
+/* padding-right: 5%; */
+margin-left: 5px; 
+/* margin-top: 80%;   */
+
+}
+#paradiv_btn{
+margin-top: 9% ;
+margin-right: 8%;
+
+}
+#paradiv_btn p{
+font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
