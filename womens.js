@@ -1,5 +1,5 @@
 
-var womensdata = [
+var data = [
     {
         img: "https://static.zara.net/photos///2022/I/0/1/p/7885/138/390/2/w/257/7885138390_15_14_1.jpg?ts=1660818002119",
         img1: "https://static.zara.net/photos///2022/I/0/1/p/7885/138/390/2/w/750/7885138390_2_3_1.jpg?ts=1661181016023",
@@ -244,59 +244,54 @@ var womensdata = [
 
 ]
 
-console.log(womensdata)
+console.log(data)
+
+
+let filter = ()=> {
+    let value = document.getElementById("filter").value;
+    if(value==="below"){
+       data = data.filter(el => el.price <=2400);
+       //console.log(womensdata)
+       redurdom(data);
+    }
+    else if(value==="above"){
+        data = data.filter(el => el.price >=2400);
+       redurdom(data);
+    }
+   
+}
+
+import {redurdom, detaildata} from "./rendurdom.js";
+
+let cont = document.getElementById("container");
+redurdom(data, cont);
+
+
 document.getElementById("sort").addEventListener("change", sort1)
 
 function sort1() {
   let value =  document.getElementById("sort").value;
 console.log(value)
  if(value==="lth"){
-    womensdata.sort((a,b)=> {
+    data.sort((a,b)=> {
       return  a.price-b.price;
     })
-    redurdom();
- console.log(womensdata)
+    let cont = document.getElementById("container");
+    cont.innerHTML = null;
+    redurdom(data,cont);
+ console.log(data)
 
  }
  else{
-    womensdata.sort((a,b)=> {
+    data.sort((a,b)=> {
        return b.price-a.price;
        // console.log(a.price)
     })
-    
-    redurdom();
- console.log(womensdata)
+    let cont = document.getElementById("container");
+    cont.innerHTML =null;
+    redurdom(data,cont);
+    console.log(data)
 
  }
 
 }
-
-let redurdom = ()=> {
-    let cont = document.getElementById("container");
-    cont.innerHTML = null
-
-    womensdata.forEach((el)=> {
-        let div = document.createElement("div")
-        let image = document.createElement("img");
-       
-        let Name = document.createElement("p");
-        Name.innerText = el.name;
-         let Price = document.createElement("p");
-        Price.innerText = `Rs-${el.price}`;
-        image.src = el.img;
-        div.onclick = ()=>{
-            detaildata(el);
-        }
-        div.append(image,Name,Price);
-        cont.append(div); 
-    })
-}
-redurdom();
-
-let detaildata = (el)=> {
-    let data = el;
-
-    localStorage.setItem("detaildata", JSON.stringify(data));
-    window.location.href = "womensD.html";
-}
-

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <script src="https://kit.fontawesome.com/985c64737c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        .deletebtn{
+        /* .deletebtn{
             display: flex;;
             width:20%;
             margin-left:100%; ;
@@ -17,13 +17,13 @@
             box-sizing: border-box;
             margin-top: -25%;
 
-        }
-        #cart{
+        } */
+        /* #cart{
             margin-top: -30px;
             height: 200px;
             width:40%;
             margin-left: 6%;;
-        }
+        } */
         h2{
             margin-left:110px; 
                margin-top:100px ;
@@ -69,16 +69,32 @@
 .deletebtn:hover{
     cursor: pointer;
 }
-.cart_img{
+/* .cart_img{
     margin-top:40px;
     cursor: pointer;
-}
+} */
 #kulpaisa{
     color: black;
     /* margin-left: 300px; */
     font-size: 25px;
     font-weight: bold;
     /* margin-top: 20px; */
+}
+#cart{
+    display: grid ;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1,auto);
+    gap: 5px;
+    height: 500px;
+}
+img{
+
+    height: 400px;
+    width: 300px;
+}
+#cart>div{
+    width: 300px;
+    height: 450px;
 }
     </style>
 </head>
@@ -152,7 +168,9 @@
 </html>
 <script>
 
-    var cartArr=JSON.parse(localStorage.getItem("detaildata"))||[];
+
+
+    var cartArr=JSON.parse(localStorage.getItem("cart"));
     var length = cartArr.length;
    
     console.log(length)
@@ -160,37 +178,40 @@
    qty.innerText=`SHOPPING BAG   ${(length)}`
    document.querySelector(".shop_bag").innerHTML= `${length}`
    document.querySelector(".shop_bag").style.color="white"
+
+
     function displayData(cartArr){
-    document.querySelector("#cart").innerHTML=null; 
+    let cart =  document.querySelector("#cart"); 
+    cart.innerHTML = null
     cartArr.map(function(elem,index){
     var box = document.createElement("div");
     box.setAttribute("class","cart_img")
-    var image= document.createElement("img");
-    image.src=elem.imageUrl;
-    image.setAttribute("class","img")
+    var image1= document.createElement("img");
+    image1.src=elem.image;
+    image1.setAttribute("class","image")
 
     var para = document.createElement("p");
-    para.innerText=elem.brandName;
+    para.innerText=elem.Name;
     para.setAttribute("class","p")
 
-    var price = document.createElement("p");
-    price.innerText=elem.priceOf;
-    price.setAttribute("class","rs")
+    var Price = document.createElement("p");
+    Price.innerText=elem.Price;
+    Price.setAttribute("class","Rs")
     var btn = document.createElement("button");
     btn.innerText="DELETE";
     btn.style.backgroundColor="white";
     btn.style.color="black"
     btn.setAttribute("class","deletebtn")
     btn.addEventListener("click",function(){
-    delete_remove(elem.id);
+    delete_remove(index);
 
       })
-      box.append(image,para,price,btn);
+      box.append(image1,para,Price,btn);
       document.querySelector("#cart").append(box);
     })
     }
     var totalprice=cartArr.reduce(function(sum,elem){
-        return sum+Number(elem.priceOf);
+        return sum+Number(elem.Price);
     },0)
       console.log(totalprice)
      var totaldiv = document.createElement("div");
@@ -199,29 +220,30 @@
      document.querySelector("#kulpaisa").append(totaldiv);
 
     displayData(cartArr);
-    function delete_remove(id){
-        var filterArr=JSON.parse(localStorage.getItem("detaildata"))||[]; 
-        var deletedArr=filterArr.filter(function(elem){
-            return elem.id!=id;
-            
-            
-        })
+
+
+    function delete_remove(index){
+        var filterArr=JSON.parse(localStorage.getItem("cart")); 
+        // var deletedArr = elem
+         deletedArr=filterArr.splice(1,index)
+
          totalprice=deletedArr.reduce(function(sum,elem){
-        return sum+Number(elem.priceOf);
-    },0)
+        return sum+Number(elem.Price);
+    })
     //  totaldiv = document.createElement("div");
-     totaldiv.innerText=totalprice;
-     document.querySelector("#kulpaisa").append(totaldiv);
+    //  totaldiv.innerText=totalprice;
+    //  document.querySelector("#kulpaisa").append(totaldiv);
      
-        qty.innerText=`SHOPPING BAG  ${(deletedArr.length)}`
-        displayData(deletedArr);
+    //     qty.innerText=`SHOPPING BAG  ${(deletedArr.length)}`
+    //     displayData(deletedArr);
        
-         localStorage.setItem("detaildata ",JSON.stringify(deletedArr));
-        
+         localStorage.setItem("cart",JSON.stringify(deletedArr));
+        window.location.reload()
     }
     document.querySelector(".continue").addEventListener("click",continuepage)
     function continuepage(){
         window.location.href="checkout.html"
+
 
     }
     // -------------------------navbarhumburger--------------------------
