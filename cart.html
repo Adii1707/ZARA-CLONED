@@ -186,7 +186,6 @@ img{
 
     function displayData(cartArr){
 
-
     let cart =  document.querySelector("#cart"); 
     cart.innerHTML = null
     cartArr.map(function(elem,index){
@@ -238,6 +237,7 @@ img{
         var filterArr=JSON.parse(localStorage.getItem("cart")); 
         // var deletedArr = elem
          deletedArr=filterArr.splice(1,index)
+
 
     //      totalprice=deletedArr.reduce(function(sum,elem){
     //     return sum+Number(elem.Price);
