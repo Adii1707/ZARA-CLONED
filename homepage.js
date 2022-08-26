@@ -199,11 +199,3 @@ function slider(sliderElement) {
 
 
 // ---------------------Landing Page Carousel  End---------------------------
-
-
-
-//----------To show userName after Login-------------------------------------
-let userData = JSON.parse(localStorage.getItem("user"));
-if(userData != null){
-    document.getElementById("logInOption").innerText=userData.Name;
-}
