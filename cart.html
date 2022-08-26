@@ -170,7 +170,7 @@ img{
 
 
 
-    var cartArr=JSON.parse(localStorage.getItem("cart"));
+    var cartArr=JSON.parse(localStorage.getItem("cart")) || [];
 
  
     var length = cartArr.length;
@@ -181,8 +181,11 @@ img{
    document.querySelector(".shop_bag").innerHTML= `${length}`
    document.querySelector(".shop_bag").style.color="white"
 
+// display function ----------------------------------------------->>>>
+
 
     function displayData(cartArr){
+
     let cart =  document.querySelector("#cart"); 
     cart.innerHTML = null
     cartArr.map(function(elem,index){
@@ -211,7 +214,13 @@ img{
       box.append(image1,para,Price,btn);
       document.querySelector("#cart").append(box);
     })
+
+
+
     }
+
+
+
     var totalprice=cartArr.reduce(function(sum,elem){
         return sum+Number(elem.Price);
     },0)
@@ -229,9 +238,10 @@ img{
         // var deletedArr = elem
          deletedArr=filterArr.splice(1,index)
 
-         totalprice=deletedArr.reduce(function(sum,elem){
-        return sum+Number(elem.Price);
-    })
+
+    //      totalprice=deletedArr.reduce(function(sum,elem){
+    //     return sum+Number(elem.Price);
+    // })
     //  totaldiv = document.createElement("div");
     //  totaldiv.innerText=totalprice;
     //  document.querySelector("#kulpaisa").append(totaldiv);
