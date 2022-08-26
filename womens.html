@@ -49,6 +49,7 @@
       #sorting{
         display: flex;
         justify-content: space-between;
+        margin: 15px;
       }
     </style>
 </head>
@@ -64,14 +65,14 @@
         </div>
         <div class="sort1">
             <h5>Filter By:</h5>
-            <select name="" id="filter">
+            <select name="" id="filter" onchange="filter()">
                 <option value="">Filter By price</option>
-                <option value="">Below 3000</option>
-                <option value="">Above 3000</option>
+                <option value="below">Below 3000</option>
+                <option value="above">Above 3000</option>
             </select>
         </div>
     </div>
     <div id="container"></div>
 </body>
 </html>
-<script src="womens.js"></script>
+<script src="womens.js" type="module"></script>
