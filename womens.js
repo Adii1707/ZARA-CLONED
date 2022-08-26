@@ -245,6 +245,28 @@ var womensdata = [
 ]
 
 console.log(womensdata)
+
+
+let filter = ()=> {
+    let value = document.getElementById("filter").value;
+    if(value==="below"){
+       womensdata = womensdata.filter(el => el.price <=2400);
+       //console.log(womensdata)
+       redurdom();
+    }
+    else if(value==="above"){
+        womensdata = womensdata.filter(el => el.price >=2400);
+       redurdom();
+    }
+   
+}
+
+import {redurdom, detaildata} from "./rendurdom.js";
+
+let cont = document.getElementById("container");
+redurdom(womensdata, cont);
+
+
 document.getElementById("sort").addEventListener("change", sort1)
 
 function sort1() {
@@ -254,7 +276,9 @@ console.log(value)
     womensdata.sort((a,b)=> {
       return  a.price-b.price;
     })
-    redurdom();
+    let cont = document.getElementById("container");
+    cont.innerHTML = null;
+    redurdom(womensdata,cont);
  console.log(womensdata)
 
  }
@@ -263,40 +287,11 @@ console.log(value)
        return b.price-a.price;
        // console.log(a.price)
     })
-    
-    redurdom();
- console.log(womensdata)
+    let cont = document.getElementById("container");
+    cont.innerHTML =null;
+    redurdom(womensdata,cont);
+console.log(womensdata)
 
  }
 
 }
-
-let redurdom = ()=> {
-    let cont = document.getElementById("container");
-    cont.innerHTML = null
-
-    womensdata.forEach((el)=> {
-        let div = document.createElement("div")
-        let image = document.createElement("img");
-       
-        let Name = document.createElement("p");
-        Name.innerText = el.name;
-         let Price = document.createElement("p");
-        Price.innerText = `Rs-${el.price}`;
-        image.src = el.img;
-        div.onclick = ()=>{
-            detaildata(el);
-        }
-        div.append(image,Name,Price);
-        cont.append(div); 
-    })
-}
-redurdom();
-
-let detaildata = (el)=> {
-    let data = el;
-
-    localStorage.setItem("detaildata", JSON.stringify(data));
-    window.location.href = "womensD.html";
-}
-
