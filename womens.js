@@ -246,21 +246,6 @@ var data = [
 
 console.log(data)
 
-
-let filter = ()=> {
-    let value = document.getElementById("filter").value;
-    if(value==="below"){
-       data = data.filter(el => el.price <=2400);
-       //console.log(womensdata)
-       redurdom(data);
-    }
-    else if(value==="above"){
-        data = data.filter(el => el.price >=2400);
-       redurdom(data);
-    }
-   
-}
-
 import {redurdom, detaildata} from "./rendurdom.js";
 
 let cont = document.getElementById("container");
@@ -294,4 +279,28 @@ console.log(value)
 
  }
 
+}
+
+//<------------------------------------- filter part from here------------------------------------------------------------->
+
+document.getElementById("filter").addEventListener("change", ()=>{
+    filter();
+})
+
+let filter = ()=> {
+    let value = document.getElementById("filter").value;
+    if(value==="below"){
+      let newdata = data.filter(el => el.price <=2800);
+       //console.log(womensdata)
+       let cont = document.getElementById("container");
+       cont.innerHTML =null;
+       redurdom(newdata,cont);
+    }
+    else{
+     let  data1 =  data.filter(el => el.price >=2800);
+        let cont = document.getElementById("container");
+        cont.innerHTML =null;
+       redurdom(data1,cont);
+    }
+  // redurdom(data,cont)
 }

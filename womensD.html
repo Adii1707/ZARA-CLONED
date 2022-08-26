@@ -16,13 +16,13 @@
             height: 500px;
             width: 370px;
             overflow:auto;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         }
 
         img{
             width: 350px;
             margin-top:  30px;
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 
         }
         #info{
@@ -31,13 +31,13 @@
             margin-left: -30px;
             /* border: 1px solid gray; */
             /* text-align: center; */
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
         }
         #detail{
             width: 300px;
             margin-top: 70px;
             /* border: 1px solid gray; */
-            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
            
         }
            p{
@@ -57,9 +57,130 @@
             margin-top: 50px;
             margin-left: 60px;
            }
+
+           /*-------------------- Header start ------------------------- */
+
+header {
+    width: 100%;
+    padding: 12px 24px 20px 24px;
+    position:fixed;
+    margin-bottom: 0px;
+   
+}
+
+#headerContents {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#headerLeft {
+    display: flex;
+}
+
+#headerRight {
+    width: 30%;
+    display: flex;
+    margin-right: 30px;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+#headerRightLeft>a {
+    padding: 0% 60% 0% 0%;
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    color: rgb(41, 41, 41);
+    font-weight: 700;
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+    font-stretch: ultra-condensed;
+}
+
+#headerRightRight {
+    display: flex;
+    width: fit-content;
+}
+
+#headerRightRight>a {
+    text-decoration: none;
+    padding: 0px 10px 0px 10px;
+    font-size: 13px;
+    color: rgb(41, 41, 41);
+    font-weight: 100;
+    font-family: 'Neue-Helvetica', 'Helvetica', 'Arial', Sans-Serif;
+    font-stretch: ultra-condensed;
+}
+
+#menu {
+    width: 35px;
+    height: 35px;
+    margin-right: 30px;
+}
+
+#logo {
+    width: 212px;
+}
+
+@media only screen and (max-width: 760px) {
+    #helpOption {
+        display: none;
+    }
+    #headerRight {
+        width: 10%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    #logInOption {
+        display: none;
+    }
+    #headerRightLeft>a {
+        padding: 0px;
+    }
+    #logo {
+        width: 170px;
+    }
+}
+
+
+/*-------------------- Header End------------------------- */
+
     </style>
 </head>
 <body>
+
+  <!-- <---------------------------------Navbar start------------------------------------------------>
+
+
+    <header>
+        <div id="headerContents">
+            <div id="headerLeft">
+                <div>
+                    <input type="image" name="menu" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgOdHluCXbSOrJ-8iZQzmfCiR9LzhI23i8DQ&usqp=CAU" id="menu" onclick="document.getElementById('menuModal').style.display='block'">
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg" alt="Zara_Logo" id="logo">
+                </div>
+
+            </div>
+            <div id="headerRight">
+                <div id="headerRightLeft">
+                    <a href="search.html">SEARCH</a>
+                </div>
+                <div id="headerRightRight">
+                    <a href="./login.html" id="logInOption">LOG IN</a>
+                    <a href="" id="helpOption">HELP</a>
+                    <a href="./cart.html" id="cartOption">CART
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!-- <---------------------------------Navbar end------------------------------------------------>
+
+
+
     <div id="cont">
         <div id="info">
             <h3> MATERIALS, CARE AND ORIGIN </h3>
