@@ -52,3 +52,8 @@ persform=(event)=>{
     localStorage.setItem("user",JSON.stringify(data));
     window.location.href="login.html"
 }
+//---------------------------to show user name after login------------------------
+let userData = JSON.parse(localStorage.getItem("user"));
+if(userData != null){
+    document.getElementById("logInOption").innerText=userData.Name;
+}
