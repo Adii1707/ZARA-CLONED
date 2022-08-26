@@ -1,5 +1,5 @@
 
-var womensdata = [
+var data = [
     {
         img: "https://static.zara.net/photos///2022/I/0/1/p/7885/138/390/2/w/257/7885138390_15_14_1.jpg?ts=1660818002119",
         img1: "https://static.zara.net/photos///2022/I/0/1/p/7885/138/390/2/w/750/7885138390_2_3_1.jpg?ts=1661181016023",
@@ -244,19 +244,19 @@ var womensdata = [
 
 ]
 
-console.log(womensdata)
+console.log(data)
 
 
 let filter = ()=> {
     let value = document.getElementById("filter").value;
     if(value==="below"){
-       womensdata = womensdata.filter(el => el.price <=2400);
+       data = data.filter(el => el.price <=2400);
        //console.log(womensdata)
-       redurdom();
+       redurdom(data);
     }
     else if(value==="above"){
-        womensdata = womensdata.filter(el => el.price >=2400);
-       redurdom();
+        data = data.filter(el => el.price >=2400);
+       redurdom(data);
     }
    
 }
@@ -264,7 +264,7 @@ let filter = ()=> {
 import {redurdom, detaildata} from "./rendurdom.js";
 
 let cont = document.getElementById("container");
-redurdom(womensdata, cont);
+redurdom(data, cont);
 
 
 document.getElementById("sort").addEventListener("change", sort1)
@@ -273,24 +273,24 @@ function sort1() {
   let value =  document.getElementById("sort").value;
 console.log(value)
  if(value==="lth"){
-    womensdata.sort((a,b)=> {
+    data.sort((a,b)=> {
       return  a.price-b.price;
     })
     let cont = document.getElementById("container");
     cont.innerHTML = null;
-    redurdom(womensdata,cont);
- console.log(womensdata)
+    redurdom(data,cont);
+ console.log(data)
 
  }
  else{
-    womensdata.sort((a,b)=> {
+    data.sort((a,b)=> {
        return b.price-a.price;
        // console.log(a.price)
     })
     let cont = document.getElementById("container");
     cont.innerHTML =null;
-    redurdom(womensdata,cont);
-console.log(womensdata)
+    redurdom(data,cont);
+    console.log(data)
 
  }
 
