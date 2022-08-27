@@ -1,4 +1,6 @@
 
+
+
 var data = [
     {
         img: "https://static.zara.net/photos///2022/I/0/1/p/7885/138/390/2/w/257/7885138390_15_14_1.jpg?ts=1660818002119",
@@ -304,3 +306,7 @@ let filter = ()=> {
     }
   // redurdom(data,cont)
 }
+
+
+
+

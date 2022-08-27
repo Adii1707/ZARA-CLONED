@@ -7,8 +7,9 @@
     grid-template-rows: repeat(1, auto);
     gap: -11px;
     padding: 10px 10px 10px 10px;
-    /* width: 100%; */
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 180px;
+    position: absolute;
   
 }
 #container>div{
@@ -53,7 +54,10 @@ display: flex;
 justify-content: space-between;
 margin: 15px;
 /* border: 1px solid red; */
-margin-top: 18px;
+margin-top: 60px;
+position: absolute;
+width: 100%;
+justify-content: space-between;
 }
 
 p{
@@ -72,9 +76,15 @@ p{
           header {
             width: 100%;
             padding: 12px 24px 20px 24px;
-            position:fixed;
-            margin-bottom: 0px;
-           
+            position:relative;
+            margin-bottom: 10px;
+            /* border: 1px solid black; */
+            height: 70px;
+            padding-top: 20px;
+        }
+        
+        #space{
+            margin-top: 50px;
         }
         
         #headerContents {
@@ -129,6 +139,8 @@ p{
         
         #logo {
             width: 212px;
+            margin-top: -250px;
+            position: relative;
         }
         
         @media only screen and (max-width: 760px) {
@@ -153,3 +165,5 @@ p{
         
         
         /*-------------------- Header End------------------------- */
+
+        
