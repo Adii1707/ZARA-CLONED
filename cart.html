@@ -8,18 +8,16 @@
     <script src="https://kit.fontawesome.com/985c64737c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-        .deletebtn{
-           
-            width:140px;
-            text-align: center;
-            background-color: black;
-            color: white;
-            margin-left: 40px;
-            
-            /* box-sizing: border-box; */
-        
+        /* .deletebtn{
+            display: flex;;
+            width:20%;
+            margin-left:100%; ;
+            padding-top: 10px;
+            padding-left: 30px;
+            box-sizing: border-box;
+            margin-top: -25%;
 
-        }
+        } */
         /* #cart{
             margin-top: -30px;
             height: 200px;
@@ -85,19 +83,18 @@
 #cart{
     display: grid ;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: auto;
-    gap: 19px;
-    
+    grid-template-rows: repeat(1,auto);
+    gap: 5px;
+    height: 500px;
 }
 img{
 
-    height: 300px;
+    height: 400px;
     width: 300px;
 }
 #cart>div{
     width: 300px;
-    height: 400px;
-    text-align: center;
+    height: 450px;
 }
     </style>
 </head>
@@ -202,14 +199,13 @@ img{
     para.innerText=elem.Name;
     para.setAttribute("class","p")
 
-    var Price = document.createElement("h5");
+    var Price = document.createElement("p");
     Price.innerText=elem.Price;
-    // Price.style.textAlign = "centre"
     Price.setAttribute("class","Rs")
     var btn = document.createElement("button");
     btn.innerText="DELETE";
-    // btn.style.backgroundColor="white";
-    // btn.style.color="black"
+    btn.style.backgroundColor="white";
+    btn.style.color="black"
     btn.setAttribute("class","deletebtn")
     btn.addEventListener("click",function(){
     delete_remove(index);
