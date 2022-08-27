@@ -77,3 +77,9 @@ let addtobag = (el)=> {
   alert("product added successfully");
     
     }
+
+    //----------To show userName after Login-------------------------------------
+let userData = JSON.parse(localStorage.getItem("user"));
+if(userData != null){
+    document.getElementById("logInOption").innerText=userData.Name;
+}

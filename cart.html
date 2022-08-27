@@ -8,16 +8,18 @@
     <script src="https://kit.fontawesome.com/985c64737c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* .deletebtn{
-            display: flex;;
-            width:20%;
-            margin-left:100%; ;
-            padding-top: 10px;
-            padding-left: 30px;
-            box-sizing: border-box;
-            margin-top: -25%;
+       .deletebtn{
+           
+           width:140px;
+           text-align: center;
+           background-color: black;
+           color: white;
+           margin-left: 40px;
+           
+           /* box-sizing: border-box; */
+       
 
-        } */
+       }
         /* #cart{
             margin-top: -30px;
             height: 200px;
@@ -82,19 +84,21 @@
 }
 #cart{
     display: grid ;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(1,auto);
-    gap: 5px;
-    height: 500px;
+    gap: 19px;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 img{
 
-    height: 400px;
+    height: 300px;
     width: 300px;
 }
 #cart>div{
     width: 300px;
     height: 450px;
+    text-align: center;
 }
     </style>
 </head>
@@ -121,9 +125,9 @@ img{
     </div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a id="women" href="women.html">WOMAN</a>
+        <a id="women" href="womens.html">WOMAN</a>
         <a id="man" href="men.html">MAN</a>
-        <a href="men.html">BEST SELLERSNEW</a>
+        <a href="mens.html">BEST SELLERSNEW</a>
         <a href="men.html">BLAZERS</a>
         <a href="men.html">DRESSES | JUMPSUITS</a>
         <a href="men.html">SHIRTS</a>
@@ -187,7 +191,8 @@ img{
     function displayData(cartArr){
 
     let cart =  document.querySelector("#cart"); 
-    cart.innerHTML = null
+    cart.innerHTML = null;
+
     cartArr.map(function(elem,index){
     var box = document.createElement("div");
     box.setAttribute("class","cart_img")
@@ -199,13 +204,13 @@ img{
     para.innerText=elem.Name;
     para.setAttribute("class","p")
 
-    var Price = document.createElement("p");
+    var Price = document.createElement("h5");
     Price.innerText=elem.Price;
     Price.setAttribute("class","Rs")
     var btn = document.createElement("button");
     btn.innerText="DELETE";
-    btn.style.backgroundColor="white";
-    btn.style.color="black"
+    // btn.style.backgroundColor="white";
+    // btn.style.color="black"
     btn.setAttribute("class","deletebtn")
     btn.addEventListener("click",function(){
     delete_remove(index);
@@ -236,20 +241,10 @@ img{
     function delete_remove(index){
         var filterArr=JSON.parse(localStorage.getItem("cart")); 
         // var deletedArr = elem
-         deletedArr=filterArr.splice(1,index)
+         filterArr.splice(1,index)
 
-
-    //      totalprice=deletedArr.reduce(function(sum,elem){
-    //     return sum+Number(elem.Price);
-    // })
-    //  totaldiv = document.createElement("div");
-    //  totaldiv.innerText=totalprice;
-    //  document.querySelector("#kulpaisa").append(totaldiv);
-     
-    //     qty.innerText=`SHOPPING BAG  ${(deletedArr.length)}`
-    //     displayData(deletedArr);
        
-         localStorage.setItem("cart",JSON.stringify(deletedArr));
+         localStorage.setItem("cart",JSON.stringify(filterArr));
         window.location.reload()
     }
     document.querySelector(".continue").addEventListener("click",continuepage)

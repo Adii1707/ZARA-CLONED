@@ -210,7 +210,10 @@ li {
 
 /*------------- Modal ---------------*/
 
-
+a{
+    text-decoration: none;
+    color: black;
+}
 /*/// ---------------------Landing Page Carousel---------------------------*/
 
 body.slider__body {
