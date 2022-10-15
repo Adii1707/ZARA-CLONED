@@ -16,9 +16,9 @@
     <a href="#About">About</a> &#10023;
   </p>
   
-  ZARA is an e-commerce website which primarily sells clothes, shoes aassesories swimwear, beauty, and perfumes.
+  ZARA is an e-commerce website which primarily sells clothes, shoes, accessories, swimwear, beauty, and perfumes.
   It is the largest company in the Inditex group, the world's largest apparel retailer.
-  This was a collaborative project built by team of 5 members excuted in 5 days
+  This was a collaborative project built by team of 5 members executed in 5 days
   
 <br />
 
